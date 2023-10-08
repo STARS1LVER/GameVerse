@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './list-game-page-component.component.html',
   styleUrls: ['./list-game-page-component.component.css']
 })
-export class ListGamePageComponentComponent {
+export class ListGamePageComponent {
 
 }

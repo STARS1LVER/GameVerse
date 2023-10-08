@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './welcome-page-component.component.html',
   styleUrls: ['./welcome-page-component.component.css']
 })
-export class WelcomePageComponentComponent {
+export class WelcomePageComponent {
 
 }

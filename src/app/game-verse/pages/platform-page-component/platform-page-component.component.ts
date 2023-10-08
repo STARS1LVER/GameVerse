@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './platform-page-component.component.html',
   styleUrls: ['./platform-page-component.component.css']
 })
-export class PlatformPageComponentComponent {
+export class PlatformPageComponent {
 
 }
