@@ -1,0 +1,295 @@
+
+
+main{
+  font-family: 'Gabarito', cursive;
+}
+
+/* Section dentro del main */
+.section-main{
+  height: 100vh;
+  background-color: rgb(29, 29, 29);
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(240, 240, 240);
+
+}
+
+/* Primer articulo */
+.contenedor-articulo-1{
+  margin-top: 20px;
+  /* border: 1px solid rgb(243, 75, 13); */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  width: 1000px;
+  height: 400px;
+}
+
+/* Contenedor la imagen del primer articulo */
+.cont-img{
+  width: 900px;
+  height: 350px;
+  border-radius: 10px;
+  /* border: 1px solid rebeccapurple; */
+}
+
+/* Imagen del primer articulo */
+.cont-img img {
+  width: 100%;
+
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 10px 10px 17px -8px #00bf23;
+}
+
+
+/* Titulo del primer articulo */
+.art1-part-1 h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(240, 255, 241);
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Parrafo del primer articulo */
+.art1-part-1 p {
+  font-size: 26px;
+  color: rgb(240, 255, 241);
+
+}
+
+/* =-------------------------------- */
+
+/* Empezamos el articulo 2 */
+/* contenedor del articulo 2 */
+.contenedor-articulo-2{
+  width: 900px;
+  margin-top: 15px;
+  padding: 5px;
+  /* border: 1px solid purple; */
+  display: flex;
+  flex-direction: column;
+}
+
+.text-cont{
+  font-size: 39px;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Articulo 2 contenedor */
+.art2-part-2{
+  display: flex;
+  /* border: 1px solid goldenrod; */
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+/* Contenedor de las imagenes del segundo articulo */
+.cont-img-article{
+  width: 300px;
+  height: 200px;
+}
+/*  estilos a  las Imagenes del segundo articulo */
+.cont-img-article img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* contenedor de textox del articulo2 */
+.art2-cont-text{
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  width: 400px;
+
+}
+
+/* Animacion del titulo que es gameverse? */
+.text-shadow-pop-bottom {
+	-webkit-animation: text-shadow-pop-bottom 0.6s both;
+	        animation: text-shadow-pop-bottom 0.6s both;
+}
+
+
+/* Keyframes del titulo que es gameverrse? */
+
+ @-webkit-keyframes text-shadow-pop-bottom {
+  0% {
+    text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 1px #555555, 0 2px #555555, 0 3px #555555, 0 4px #555555, 0 5px #555555, 0 6px #555555, 0 7px #555555, 0 8px #555555;
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+}
+@keyframes text-shadow-pop-bottom {
+  0% {
+    text-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 1px #555555, 0 2px #555555, 0 3px #555555, 0 4px #555555, 0 5px #555555, 0 6px #555555, 0 7px #555555, 0 8px #555555;
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+}
+
+
+/* ---------------------------------------------------------- */
+
+/* Estilos de los botones */
+button {
+  margin-top: 5px;
+  padding: 0.1em 0.25em;
+  width: 13em;
+  height: 4.2em;
+  background-color: #212121;
+  border: 0.08em solid #00bf23;
+  border-radius: 0.3em;
+  font-size: 12px;
+}
+
+button span {
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0.4em;
+  width: 8.25em;
+  height: 2.5em;
+  background-color: #212121;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  color: #fff;
+  border: 0.08em solid #00bf23;
+  box-shadow: 0 0.4em 0.1em 0.019em #00bf23;
+
+}
+
+button span:hover {
+  transition: all 0.5s;
+  transform: translate(0, 0.4em);
+  box-shadow: 0 0 0 0 #fff;
+}
+
+button span:not(hover) {
+  transition: all 1s;
+}
+
+i{
+  margin-left: 9px;
+}
+/* --------------------------------------------------------------- */
+
+
+/* Responsivo para moviles */
+
+@media screen and (max-width: 600px) {
+
+  .section-main{
+    height: auto;
+    width: auto;
+
+  }
+
+  .contenedor-articulo-1{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+
+  .cont-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    /* border: 1px solid rebeccapurple; */
+  }
+
+  /* Imagen del primer articulo */
+  .cont-img img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 10px 10px 17px -8px #00bf23;
+  }
+
+  .art1-part-1 h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  /* Parrafo del primer articulo */
+  .art1-part-1 p {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(240, 255, 241);
+
+  }
+
+
+
+.contenedor-articulo-2{
+    width: 320px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-articulo-2 h2 {
+  font-size: 20px;
+}
+
+.art2-part-2{
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  border: 1px solid gold;
+}
+
+
+.cont-img-article{
+  width: 200px;
+  height: 130px;
+}
+/*  estilos a  las Imagenes del segundo articulo */
+.cont-img-article img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.art2-cont-text{
+  text-wrap: wrap;
+}
+
+.art2-cont-text h4 {
+  font-size: 20px;
+  text-wrap: wrap;
+}
+
+
+
+}
