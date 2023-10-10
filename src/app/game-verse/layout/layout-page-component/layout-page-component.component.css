@@ -6,3 +6,32 @@ nav{
 li a {
   font-weight: bold;
 }
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+footer{
+  font-family: 'Gabarito', cursive;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+footer h5 {
+  color: #00bf23;
+}
+
+footer p {
+  color: #ffffff;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
