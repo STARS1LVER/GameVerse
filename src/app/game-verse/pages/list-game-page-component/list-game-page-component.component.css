@@ -1,0 +1,28 @@
+main{
+  height: 100%;
+  font-family: 'Gabarito', cursive;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.title-game{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 78px;
+  margin-top: 20px;
+  color: #00bf23;
+}
+
+
+
+.game-container{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 14px; /* Espacio entre las tarjetas */
+}
+

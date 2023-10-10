@@ -1,1 +1,18 @@
-<p>list-game-page-component works!</p>
+
+<main class="">
+
+  <h2 class="title-game text-shadow-pop-bottom">Amazing games</h2>
+
+  <section class="game-container">
+
+    <div *ngFor="let game of listGames" class="">
+      <card-game [gameList]="game" ></card-game>
+    </div>
+
+  </section>
+
+
+
+
+
+</main>
