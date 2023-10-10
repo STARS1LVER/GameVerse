@@ -12,6 +12,7 @@ import { PlatformPageComponent } from './pages/platform-page-component/platform-
 import { PlatformListGamesComponent } from './pages/platform-list-games-component/platform-list-games-component.component';
 import { GenresListGamesComponent } from './pages/genres-list-games-component/genres-list-games-component.component';
 
+
 // Configuracion De Rutas
 const routes: Routes = [
   {
