@@ -22,9 +22,8 @@ export class ListGamePageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getGames();
+    this.onPageChanged(this.currentPage)
 
-    // Nos subscribimos al Subject para ser notificados cuando la página cambie:
 
   }
 
@@ -33,18 +32,28 @@ export class ListGamePageComponent implements OnInit {
    * la respuesta que nos da el metodo del servicio getlistGames
    * @returns void
    */
-  public getGames(): void {
+  public getGames(page: number): void {
 
-    this.gameVerseServicio.getListGames(9)
+    this.gameVerseServicio.getListGames(page)
     .subscribe({
       next: (respuesta) => {
         this.listGames = respuesta;
-        console.log(this.currentPage)
       },
       error: (err) => {
         console.log(`Hay un pequeño: ${err}`)
       }
     })
+
+  }
+
+  public onPageChanged(page: number){
+
+    this.currentPage = page
+
+    if(this.currentPage <= 0 ) return
+
+    this.getGames(this.currentPage)
+
 
   }
 

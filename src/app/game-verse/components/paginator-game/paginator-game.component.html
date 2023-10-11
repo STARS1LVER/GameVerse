@@ -1,11 +1,11 @@
 <div>
   <nav class="">
     <ul>
-      <li class=""><a class="page-link" > <button (click)="changePage(page - 1)" class="button-opcion button-p"   > <i class="fa-solid fa-circle-chevron-left" style="color: #ffffff;"> </i> Previous </button> </a></li>
+      <li class=""><a class="page-link" > <button (click)="changePage(page - 1)"  class="button-opcion button-p"   > <i class="fa-solid fa-circle-chevron-left" style="color: #ffffff;"> </i> Previous </button> </a></li>
       <li class="page-item" *ngFor="let pagef of [1,2,3]">
-        <button class="page-link-i button-p" (click)="changePage(page = pagef)"> {{pagef}} </button>
+        <button (click)="changePage(page = pagef)" class="page-link-i button-p" > {{pagef}} </button>
       </li>
-      <li class=""><a class="page-link"> <button (click)="changePage(page +1)" class="button-opcion button-p" > Next <i class="fa-solid fa-circle-chevron-right" style="color: #ffffff;"></i></button> </a></li>
+      <li class=""><a class="page-link"> <button (click)="changePage(page + 1)" class="button-opcion button-p" > Next <i class="fa-solid fa-circle-chevron-right" style="color: #ffffff;"></i></button> </a></li>
     </ul>
   </nav>
 </div>

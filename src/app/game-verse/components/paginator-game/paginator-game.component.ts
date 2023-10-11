@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'paginator-game',
@@ -7,7 +7,17 @@ import { Component } from '@angular/core';
 })
 export class PaginatorGameComponent {
 
+  public page:number = 1;
+
+  @Output()
+  public pageChange = new EventEmitter<number>()
 
 
+  public changePage(page: number){
+
+    this.page = page
+
+    this.pageChange.emit(this.page)
+  }
 
 }
