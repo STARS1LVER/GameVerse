@@ -1,6 +1,6 @@
 <div class="card card-p" style="width: 18rem;">
   <div class="content-img">
-    <img [src]="gameList.background_image" class="" alt="...">
+    <img ngOptimizedImage [src]="gameList.background_image" fetchPriority="high" class="" alt="...">
   </div>
   <div class="card-body">
     <h5 class="card-title"> {{gameList.name}} </h5>

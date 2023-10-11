@@ -15,6 +15,7 @@ import { SearchGameComponent } from './pages/search-game-component/search-game-c
 import { TopGamesComponent } from './pages/top-games-component/top-games-component.component';
 import { WelcomePageComponent } from './pages/welcome-page-component/welcome-page-component.component';
 import { LayoutPageComponent} from './layout/layout-page-component/layout-page-component.component';
+import { NgOptimizedImage } from '@angular/common';
 
 // Modulos
 import { GameVerseRoutingModule } from './game-verse-routing.module';
@@ -41,7 +42,8 @@ import { PaginatorGameComponent } from './components/paginator-game/paginator-ga
   ],
   imports: [
     CommonModule,
-    GameVerseRoutingModule
+    GameVerseRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class GameVerseModule { }
