@@ -3,7 +3,15 @@
 
   <h2 class="title-game text-shadow-pop-bottom">Amazing games</h2>
 
-  <section class="game-container">
+
+
+  <div class="content-spinner" *ngIf="isloading" >
+    <spinner-game  ></spinner-game>
+
+  </div>
+
+  <section class="game-container" *ngIf="!isloading">
+
 
     <div *ngFor="let game of listGames" class="">
       <card-game [gameList]="game" ></card-game>

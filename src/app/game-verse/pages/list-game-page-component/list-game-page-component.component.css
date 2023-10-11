@@ -28,6 +28,14 @@ main{
 
 
 
+.content-spinner{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 @media screen and (max-width: 600px) {
 
   .title-game{

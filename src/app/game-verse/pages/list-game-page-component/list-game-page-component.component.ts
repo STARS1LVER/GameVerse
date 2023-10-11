@@ -12,6 +12,7 @@ export class ListGamePageComponent implements OnInit {
   // Propiedades:
   public listGames!: Result[];
   public currentPage: number = 1
+  public isloading: boolean = true;
 
 
 
@@ -34,10 +35,16 @@ export class ListGamePageComponent implements OnInit {
    */
   public getGames(page: number): void {
 
+    this.isloading = true
+
     this.gameVerseServicio.getListGames(page)
     .subscribe({
       next: (respuesta) => {
-        this.listGames = respuesta;
+        setTimeout(() => {
+          this.isloading = false
+          this.listGames = respuesta;
+
+        },3000);
       },
       error: (err) => {
         console.log(`Hay un pequeño: ${err}`)
