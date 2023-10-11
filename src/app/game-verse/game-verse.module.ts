@@ -19,6 +19,7 @@ import { LayoutPageComponent} from './layout/layout-page-component/layout-page-c
 // Modulos
 import { GameVerseRoutingModule } from './game-verse-routing.module';
 import { CardGameComponent } from './components/card-game/card-game.component';
+import { PaginatorGameComponent } from './components/paginator-game/paginator-game.component';
 
 
 
@@ -36,6 +37,7 @@ import { CardGameComponent } from './components/card-game/card-game.component';
     TopGamesComponent,
     WelcomePageComponent,
     CardGameComponent,
+    PaginatorGameComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,49 @@
+/*-------- Estilos paginator -------------*/
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+ul {
+  /* border: 1px solid red; */
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+}
+
+.button-p{
+  background-color: rgb(14, 14, 14);
+  border: 1px solid #00bf23;
+  padding: 3px
+}
+
+.button-p:hover{
+  background-color: #383838;
+  transition: 0.5s;
+}
+
+
+.button-opcion{
+  border-radius: 6px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  /* border: none; */
+
+  padding: 5px;
+  box-shadow: 0 2px 2px 0px #16161680;
+}
+
+.page-link-i{
+  width: 26px;
+  padding: 5px;
+  border: 1px solid #00bf23;
+  border-radius: 3px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px 0px #16161680;
+
+}
+/*------- termina estilos paginator---------- */

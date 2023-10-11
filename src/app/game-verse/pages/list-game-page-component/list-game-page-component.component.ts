@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Result } from '../../interfaces/list-games.interface';
 import { GameVerveService } from '../../services/game-serve.service';
+import { PaginatorService } from '../../services/paginator.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-list-game-page-component',
@@ -11,13 +13,25 @@ export class ListGamePageComponent implements OnInit {
 
   // Propiedades:
   public listGames!: Result[];
+  public currentPage: number = 1
+
+  private currentPageChanged: Subject<number> = new Subject();
 
   // Inyectamos en el constructor el servicio:
-  constructor( private gameVerseServicio: GameVerveService){}
+  constructor(
+    private gameVerseServicio: GameVerveService,
+    private paginatorService: PaginatorService,){}
 
 
   ngOnInit(): void {
-    this.getGames()
+
+    this.getGames();
+
+    // Nos subscribimos al Subject para ser notificados cuando la página cambie:
+    this.currentPageChanged.subscribe((currentPage) => {
+      this.currentPage = currentPage;
+      this.getGames();
+    });
   }
 
   /**
@@ -26,18 +40,24 @@ export class ListGamePageComponent implements OnInit {
    * @returns void
    */
   public getGames(): void {
-    this.gameVerseServicio.getListGames()
+
+    this.gameVerseServicio.getListGames(9)
     .subscribe({
-      next:(respuesta) => {
+      next: (respuesta) => {
         this.listGames = respuesta;
+        console.log(this.currentPage)
       },
       error: (err) => {
-        console.log(`Hay un error: ${err}`)
+        console.log(`Hay un pequeño: ${err}`)
       }
     })
+
   }
 
 
 
-
 }
+
+
+
+

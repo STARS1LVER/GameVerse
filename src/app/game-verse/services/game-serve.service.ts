@@ -23,8 +23,8 @@ export class GameVerveService {
    *  Usamos el operador map para transformar la respuesta y solo nos arroje un arreglo de Result
    * @returns Observable<Result[]>
    */
-  public getListGames(): Observable<Result[]> {
-    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?key=${this.apiKey}&page=1&page_size=12`)
+  public getListGames(page: number): Observable<Result[]> {
+    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?key=${this.apiKey}&page=${page}&page_size=12`)
     // Nos permite transformar la respuesta:
     .pipe(
       map( respuesta => respuesta.results   )
