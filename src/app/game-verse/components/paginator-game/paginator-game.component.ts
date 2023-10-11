@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { PaginatorService } from '../../services/paginator.service';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'paginator-game',
@@ -10,19 +8,6 @@ import { Subject } from 'rxjs';
 export class PaginatorGameComponent {
 
 
-  public page: number = 1;
 
-  private currentPageChanged: Subject<number> = new Subject()
-
-
-  constructor( private paginatorService: PaginatorService ) {}
-
-
-  public changePage( page: number ){
-    if( page <= 0 ) return
-    this.page = page
-    this.paginatorService.setCurrentPage(this.page);
-    this.currentPageChanged.next(this.page)
-  }
 
 }
