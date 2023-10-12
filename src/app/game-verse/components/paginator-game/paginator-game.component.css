@@ -8,9 +8,9 @@ nav {
 
 ul {
   /* border: 1px solid red; */
-  list-style: none;
   display: flex;
   gap: 10px;
+  list-style: none;
   padding: 5px;
 }
 
@@ -27,23 +27,22 @@ ul {
 
 
 .button-opcion{
-  border-radius: 6px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
   /* border: none; */
-
-  padding: 5px;
+  border-radius: 6px;
   box-shadow: 0 2px 2px 0px #16161680;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 5px;
 }
 
 .page-link-i{
-  width: 26px;
-  padding: 5px;
-  border: 1px solid #00bf23;
   border-radius: 3px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
+  border: 1px solid #00bf23;
   box-shadow: 0 2px 2px 0px #16161680;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 5px;
+  width: 26px;
 
 }
 /*------- termina estilos paginator---------- */

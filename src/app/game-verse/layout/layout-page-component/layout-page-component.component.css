@@ -1,6 +1,8 @@
 
+
 nav{
   font-family: 'Gabarito', cursive;
+  background-color: rgb(25, 25, 25);
 }
 
 li a {
@@ -14,7 +16,7 @@ img {
 
 footer{
   font-family: 'Gabarito', cursive;
-
+  background-color: rgb(25, 25, 25);
 }
 
 .content-cont {

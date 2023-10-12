@@ -5,27 +5,23 @@ import { GameVerveService } from '../../services/game-serve.service';
 @Component({
   selector: 'app-list-game-page-component',
   templateUrl: './list-game-page-component.component.html',
-  styleUrls: ['./list-game-page-component.component.css']
+  styleUrls: ['./list-game-page-component.component.css'],
 })
 export class ListGamePageComponent implements OnInit {
 
+
   // Propiedades:
   public listGames!: Result[];
-  public currentPage: number = 1
+  public currentPage: number = 1;
+  // Propiedad para controlar el spinner
   public isloading: boolean = true;
 
-
-
   // Inyectamos en el constructor el servicio:
-  constructor(
-    private gameVerseServicio: GameVerveService,
-    ){}
+  constructor(private gameVerseServicio: GameVerveService) {}
 
   ngOnInit(): void {
-
-    this.onPageChanged(this.currentPage)
-
-
+    // Llamamos al metodo
+    this.onPageChanged( this.currentPage );
   }
 
   /**
@@ -34,40 +30,35 @@ export class ListGamePageComponent implements OnInit {
    * @returns void
    */
   public getGames(page: number): void {
+    this.isloading = true;
 
-    this.isloading = true
-
-    this.gameVerseServicio.getListGames(page)
-    .subscribe({
-      next: (respuesta) => {
+    this.gameVerseServicio.getListGames( page ).subscribe({
+      next: ( respuesta ) => {
         setTimeout(() => {
-          this.isloading = false
           this.listGames = respuesta;
-
-        },3000);
+          this.isloading = false;
+        }, 1500);
       },
-      error: (err) => {
-        console.log(`Hay un pequeño: ${err}`)
-      }
-    })
-
+      error: ( err ) => {
+        console.log(`Hay un pequeño: ${err}`);
+      },
+    });
   }
 
-  public onPageChanged(page: number){
+  /**
+   * Nos permite sabes cual es el numero de la pagina
+   * para asi llamar al metodo que renderiza las cards
+   * @param page tipo number
+   * @returns void
+   */
+  public onPageChanged( page: number ) {
+    this.currentPage = page;
 
-    this.currentPage = page
+    console.log( this.currentPage );
+    console.log( page );
 
-    if(this.currentPage <= 0 ) return
+    if (this.currentPage <= 0) return;
 
-    this.getGames(this.currentPage)
-
-
+    this.getGames( this.currentPage );
   }
-
-
-
 }
-
-
-
-
