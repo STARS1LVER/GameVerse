@@ -45,6 +45,7 @@ export interface GameInfo {
   dominant_color:              string;
   parent_platforms:            ParentPlatform[];
   platforms:                   PlatformElement[];
+  requirements:                Requirements;
   stores:                      Store[];
   developers:                  Developer[];
   genres:                      Developer[];
@@ -107,6 +108,7 @@ export interface PlatformPlatform {
 
 export interface Requirements {
   minimum?: string;
+  recommended?: string
 }
 
 export interface Rating {

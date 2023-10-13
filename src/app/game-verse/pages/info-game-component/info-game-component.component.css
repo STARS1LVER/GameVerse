@@ -26,17 +26,20 @@ color: rgb(255, 255, 255);
 
   object-fit: cover;
   border-radius: 6px;
+  box-shadow: 3px 3px 3px rgba(5, 245, 73, 0.3);
 }
 
 
 .contendor-info{
-  padding: 10px;
+  padding: 15px;
   width: 1300px;
   height: 700px;
   border: 1px solid greenyellow;
   display: flex;
+  justify-content: space-around;
 
 }
+
 
 
 .cont-text{
@@ -49,4 +52,33 @@ color: rgb(255, 255, 255);
 .title-game{
   font-family: 'Bebas Neue', sans-serif;
   font-size: 55px;
+}
+
+
+
+.button-p{
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  border: 1px solid #00bf23;
+  padding: 5px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+
+
+
+}
+
+.button-p:hover{
+  background-color: #383838;
+  transition: 0.5s;
+}
+
+
+.btn-span{
+  padding: 3px;
+  width: 40px;
+  /* border: 1px solid red; */
+  border-radius: 4px;
+  background-color: #555555;
+
 }

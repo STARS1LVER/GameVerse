@@ -5,8 +5,21 @@
 
     <div class="contendor-info">
 
-      <div class="content-info-img" ngOptimizedImage>
-        <img [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
+      <div>
+        <div class="content-info-img" ngOptimizedImage>
+          <img [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
+        </div>
+
+        <div class="platform">
+          <h5>Genres</h5>
+          <div *ngFor="let genres of game.genres">
+            <button  class="button-p">
+              {{ genres.name }}
+              <img [src]="genres.image_background" width="200" height="100" alt="">
+            </button>
+          </div>
+        </div>
+
       </div>
 
       <div class="cont-text">
@@ -16,11 +29,19 @@
         <p>
           {{game.description_raw | descriptionPipe }}
         </p>
-        <div *ngFor="let platform of game.parent_platforms">
-          <button type="button" class="btn btn-primary">
-            {{platform.platform.name}} <span class="badge text-bg-secondary">4</span>
-          </button>
+        <div class="platform">
+          <h5>Platform:</h5>
+          <div *ngFor="let platform of game.parent_platforms.slice(0,3)">
+            <button  class="button-p">
+              {{platform.platform.name}} <span class="btn-span"> <i class="fa-brands fa-{{ platform.platform.slug === 'pc' ? 'steam' : platform.platform.slug }}" fa-2xs style="color: #ffffff;"></i>
+              </span>
+            </button>
+          </div>
         </div>
+
+
+
+
 
       </div>
 
