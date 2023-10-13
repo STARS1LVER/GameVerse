@@ -9,6 +9,8 @@ color: rgb(255, 255, 255);
 
 .titles{
   font-family: 'Bebas Neue', sans-serif;
+  color: #00bf23;
+  font-size: 20px;
 }
 
 .section-info{
@@ -37,8 +39,8 @@ color: rgb(255, 255, 255);
 .contendor-info{
   padding: 15px;
   width: 1300px;
-  height: 700px;
-  border: 1px solid greenyellow;
+  height: 780px;
+  /* border: 1px solid greenyellow; */
   display: flex;
   justify-content: space-around;
 
@@ -48,14 +50,14 @@ color: rgb(255, 255, 255);
 
 .cont-text{
   padding: 8px;
-  border: 1px solid tomato;
+  /* border: 1px solid tomato; */
   width: 420px;
 }
 
 
 .title-game{
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 55px;
+  font-size: 50px;
   color: #00bf23;
 }
 
@@ -86,6 +88,10 @@ color: rgb(255, 255, 255);
   border-radius: 4px;
   background-color: #555555;
 
+}
+
+.title-2{
+  display: none;
 }
 
 
@@ -149,4 +155,82 @@ color: rgb(255, 255, 255);
 
 .cont-p-tags{
   /* border: 1px solid orange; */
+}
+
+
+
+.website a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #ffffff ;
+  font-family: 'Gabarito', cursive;
+}
+
+.contenedor-back{
+  /* border: 1px solid gold; */
+}
+
+
+.content-info-img-responsive{
+  display: none;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+
+  .section-info{
+    /* border: 1px solid red; */
+    width: auto;
+    height: 100%;
+
+
+  }
+
+
+  .contendor-info{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-info-img{
+    display: none;
+  }
+
+  .content-info-img-responsive{
+    display: block;
+    width: 300px;
+    height: 150px;
+  }
+
+
+
+  .cont-card{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cont-tags{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cont-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+
+  }
+
+  .contenedor-back{
+    min-width: 320px;
+    /* background-color: aqua; */
+  }
+
 }

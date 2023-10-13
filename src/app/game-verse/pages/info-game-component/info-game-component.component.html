@@ -5,7 +5,8 @@
 
     <div class="contendor-info">
 
-      <div>
+      <div class="contenedor-back">
+        <h2 class="title-game title-2 text-shadow-pop-bottom "> {{game.name}} </h2>
         <div class="content-info-img " ngOptimizedImage>
           <img class="" [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
         </div>
@@ -21,12 +22,11 @@
           </div>
 
           <div class="cont-p-tags">
-            <h5 class="title-genres">Tags: </h5>
+            <h5 class="title-genres">Tags <i class="fa-solid fa-hashtag fa-2xs" style="color: #00bf23;"></i> : </h5>
             <div class="cont-tags">
               <div *ngFor="let tags of game.tags.slice(0,5)">
                 <button  class="button-tags">
                   {{ tags.name}}
-
                 </button>
               </div>
             </div>
@@ -36,20 +36,37 @@
       </div>
 
       <div class="cont-text">
-        <h2 class="title-game"> {{game.name}} </h2>
+        <h2 class="title-game text-shadow-pop-bottom "> {{game.name}} </h2>
+        <div class="content-info-img-responsive " ngOptimizedImage>
+          <img class="" [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
+        </div>
         <h5>  <span class="titles">Rating:</span> {{game.rating}} <i class="fa-solid fa-star fa-xs" style="color:#00bf23 ;"></i> </h5>
         <h5> <span class="titles">Released:</span> {{game.released}} <i class="fa-regular fa-calendar fa-xs" style="color: #00bf23;"></i> </h5>
         <p>
           {{game.description_raw | descriptionPipe }}
         </p>
         <div class="platform">
-          <h5>Platform:</h5>
+          <h5 class="titles">Platform <i class="fa-solid fa-layer-group fa-xs" style="color: #00bf23 ;"></i> :</h5>
           <div *ngFor="let platform of game.parent_platforms.slice(0,3)">
             <button  class="button-p">
               {{platform.platform.name}} <span class="btn-span"> <i class="fa-brands fa-{{ platform.platform.slug === 'pc' ? 'steam' : platform.platform.slug }}" fa-2xs style="color: #ffffff;"></i>
               </span>
             </button>
           </div>
+        </div>
+
+        <div class="website titles">
+          <h5> WEBSITE <i class="fa-solid fa-globe fa-xs" style="color: #00bf23 ;"></i>  : <br> <a [href]="game.website">Go to the official website.  </a>  </h5>
+
+        </div>
+
+        <div>
+          <h5 class="titles"> Developers <i class="fa-solid fa-code fa-xs" style="color: #00bf23;"></i> : </h5>
+            <div *ngFor="let dev of game.developers">
+              <button class="button-p">
+                {{dev.name | titlecase }}
+              </button>
+            </div>
         </div>
 
 
