@@ -12,11 +12,8 @@
 
         <div class="platform">
           <h5>Genres</h5>
-          <div *ngFor="let genres of game.genres">
-            <button  class="button-p">
-              {{ genres.name }}
-              <img [src]="genres.image_background" width="200" height="100" alt="">
-            </button>
+          <div class="genres" *ngFor="let genres of game.genres"  [ngStyle]="{'background-image': 'url(' + genres.image_background + ')'}">
+             <h3> {{ genres.name }}</h3>
           </div>
         </div>
 
