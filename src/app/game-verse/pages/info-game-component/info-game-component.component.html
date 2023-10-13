@@ -1,1 +1,43 @@
-<p>info-game-component works!</p>
+<main>
+
+
+  <section class="section-info">
+
+    <div class="contendor-info">
+
+      <div class="content-info-img" ngOptimizedImage>
+        <img [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
+      </div>
+
+      <div class="cont-text">
+        <h2 class="title-game"> {{game.name}} </h2>
+        <span> Rating: {{game.rating}} </span>
+        <span> Released: {{game.released}} </span>
+        <p>
+          {{game.description_raw | descriptionPipe }}
+        </p>
+        <div *ngFor="let platform of game.parent_platforms">
+          <button type="button" class="btn btn-primary">
+            {{platform.platform.name}} <span class="badge text-bg-secondary">4</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+</main>

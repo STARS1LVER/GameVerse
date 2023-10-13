@@ -1,0 +1,52 @@
+
+main{
+font-family: 'Gabarito', cursive;
+color: rgb(255, 255, 255);
+
+
+}
+
+
+.section-info{
+  border: 1px solid red;
+  height: 100vh;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.content-info-img{
+  width: 700px;
+  height: 350px;
+}
+
+.content-info-img img {
+
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
+.contendor-info{
+  padding: 10px;
+  width: 1300px;
+  height: 700px;
+  border: 1px solid greenyellow;
+  display: flex;
+
+}
+
+
+.cont-text{
+  padding: 8px;
+  border: 1px solid tomato;
+  width: 400px;
+}
+
+
+.title-game{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 55px;
+}

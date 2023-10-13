@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environments } from 'src/app/environments/environments';
 import { GameVerse, Result } from '../interfaces/list-games.interface';
 import { Observable, map } from 'rxjs';
+import { GameInfo } from '../interfaces/game-info.interface';
 
 @Injectable({providedIn: 'root'})
 
@@ -29,6 +30,15 @@ export class GameVerveService {
     .pipe(
       map( respuesta => respuesta.results   )
     )
+  }
+
+  /**
+   * Obtenemos la informacion del juego por el  id
+   * @param id tipo number
+   * @returns retorna un Observable<Emite GameInfo >
+   */
+  public getInfoGameById( id: number ): Observable<GameInfo> {
+    return this.httpClient.get<GameInfo>(`${this.baseUrl}games/${id}?key=${this.apiKey}`)
   }
 
 

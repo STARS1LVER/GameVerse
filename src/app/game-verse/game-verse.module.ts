@@ -23,6 +23,9 @@ import { CardGameComponent } from './components/card-game/card-game.component';
 import { PaginatorGameComponent } from './components/paginator-game/paginator-game.component';
 import { SpinnerGameComponent } from './components/spinner-game/spinner-game.component';
 
+// Pipes
+import { DescriptionPipe } from './pipes/description.pipe';
+
 
 
 @NgModule({
@@ -41,6 +44,7 @@ import { SpinnerGameComponent } from './components/spinner-game/spinner-game.com
     CardGameComponent,
     PaginatorGameComponent,
     SpinnerGameComponent,
+    DescriptionPipe
   ],
   imports: [
     CommonModule,
