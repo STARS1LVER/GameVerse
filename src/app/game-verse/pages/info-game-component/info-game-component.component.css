@@ -7,8 +7,12 @@ color: rgb(255, 255, 255);
 }
 
 
+.titles{
+  font-family: 'Bebas Neue', sans-serif;
+}
+
 .section-info{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 100vh;
   display: flex ;
   justify-content: center;
@@ -26,7 +30,7 @@ color: rgb(255, 255, 255);
 
   object-fit: cover;
   border-radius: 6px;
-  box-shadow: 3px 3px 3px rgba(5, 245, 73, 0.3);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -45,13 +49,14 @@ color: rgb(255, 255, 255);
 .cont-text{
   padding: 8px;
   border: 1px solid tomato;
-  width: 400px;
+  width: 420px;
 }
 
 
 .title-game{
   font-family: 'Bebas Neue', sans-serif;
   font-size: 55px;
+  color: #00bf23;
 }
 
 
@@ -84,8 +89,36 @@ color: rgb(255, 255, 255);
 }
 
 
+.cont-genres{
+  margin-top: 20px;
+  /* border: 1px solid paleturquoise; */
+  padding: 10px;
+}
+
+.title-genres{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 29px;
+  color: #00bf23;
+
+}
+
+.title-action{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 29px;
+  color: #ffffff;
+}
+
+.cont-card{
+  /* border: 1px solid rgb(30, 0, 255); */
+  display: flex;
+}
+
+
 .genres{
-  border: 1px solid red;
+  /* border: 1px solid #00bf23; */
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin:5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,4 +126,27 @@ color: rgb(255, 255, 255);
   height: 120px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+
+
+.button-tags{
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  border: 1px solid #00bf23;
+  padding: 5px;
+  margin: 6px;
+  border-radius: 8px;
+
+}
+
+.cont-tags{
+  padding: 5px;
+  /* border: 1px solid red; */
+  display: flex;
+
+}
+
+.cont-p-tags{
+  /* border: 1px solid orange; */
 }
