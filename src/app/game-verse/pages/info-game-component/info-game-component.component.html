@@ -1,7 +1,12 @@
 <main>
 
 
-  <section class="section-info" *ngIf="game">
+  <div class="content-spinner" *ngIf="isLoading">
+    <spinner-game></spinner-game>
+  </div>
+
+
+  <section class="section-info" *ngIf="game && !isLoading">
 
     <div class="contendor-info">
 

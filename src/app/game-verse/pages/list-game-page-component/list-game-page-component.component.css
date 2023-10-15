@@ -13,7 +13,7 @@ main{
   font-family: 'Bebas Neue', sans-serif;
   font-size: 78px;
   margin-top: 20px;
-  color: #00bf23;
+  color: #ffffff;
 }
 
 
@@ -23,18 +23,10 @@ main{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 14px; 
+  gap: 14px;
 }
 
 
-
-.content-spinner{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
 
 
 @media screen and (max-width: 600px) {
