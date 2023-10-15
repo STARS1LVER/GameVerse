@@ -1,1 +1,17 @@
-<p>top-games-component works!</p>
+<main>
+
+  <h2 class="title-game text-shadow-pop-bottom">New and trending</h2>
+
+  <section class="top-container">
+
+    <div *ngFor="let game of topGames">
+      <card-game [gameList]="game"></card-game>
+    </div>
+
+  </section>
+
+
+
+
+
+</main>

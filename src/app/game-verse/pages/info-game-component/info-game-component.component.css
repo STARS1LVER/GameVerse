@@ -153,9 +153,9 @@ color: rgb(255, 255, 255);
 
 }
 
-.cont-p-tags{
-  /* border: 1px solid orange; */
-}
+/* .cont-p-tags{
+  border: 1px solid orange;
+} */
 
 
 
@@ -166,9 +166,9 @@ color: rgb(255, 255, 255);
   font-family: 'Gabarito', cursive;
 }
 
-.contenedor-back{
-  /* border: 1px solid gold; */
-}
+/* .contenedor-back{
+  border: 1px solid gold;
+} */
 
 
 .content-info-img-responsive{
@@ -206,6 +206,13 @@ color: rgb(255, 255, 255);
     display: block;
     width: 300px;
     height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .content-info-img-responsive img {
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
   }
 
 
