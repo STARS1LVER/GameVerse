@@ -12,7 +12,7 @@
         </div>
 
         <div class="cont-genres">
-          <h5 class="title-genres">Genres :</h5>
+          <h5 class="title-genres">Genres <i class="fa-solid fa-cube fa-2xs" style="color: #00bf23;"></i> :</h5>
           <div class="cont-card">
             <div class="genres" *ngFor="let genres of game.genres" [ngStyle]="{
               'background-image': 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)), url(' + genres.image_background + ')'
@@ -56,7 +56,7 @@
         </div>
 
         <div class="website titles">
-          <h5> WEBSITE <i class="fa-solid fa-globe fa-xs" style="color: #00bf23 ;"></i>  : <br> <a [href]="game.website">Go to the official website.  </a>  </h5>
+          <h5> WEBSITE <i class="fa-solid fa-globe fa-xs" style="color: #00bf23 ;"></i>  : <br> <a [href]="game.website" target="_blank">Go to the official website.  </a>  </h5>
 
         </div>
 
