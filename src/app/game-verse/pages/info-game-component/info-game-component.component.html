@@ -6,7 +6,9 @@
   </div>
 
 
-  <section class="section-info" *ngIf="game && !isLoading">
+  <section  class="section-info" ngOptimizedImage *ngIf="game && !isLoading"  fetchPriority="high" [ngStyle]="{
+    'background-image': 'linear-gradient(0deg, rgba(0,0,0,1) 13%, rgba(0,191,35,0) 100%), url(' + game.background_image_additional + ')'
+  }">
 
     <div class="contendor-info">
 
