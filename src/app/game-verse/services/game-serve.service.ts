@@ -45,8 +45,8 @@ export class GameVerveService {
    * Metodo para traer los mejores juegos del año
    * @returns un obersvable que emite un arreglo de Result
    */
-  public getTopGames(): Observable<Result[]>{
-    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?dates=2022-01-01,2023-10-01&ordering=-added&key=${this.apiKey}&page=1&page_size=12`)
+  public getTopGames(page: number): Observable<Result[]>{
+    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?dates=2022-01-01,2023-10-01&ordering=-added&key=${this.apiKey}&page=${page}&page_size=12`)
     .pipe(
       map( respuesta => respuesta.results )
     )

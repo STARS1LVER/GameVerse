@@ -2,6 +2,15 @@
 
   <h2 class="title-game text-shadow-pop-bottom">New and trending</h2>
 
+
+
+
+  <div class="content-spinner" *ngIf="isLoading">
+    <spinner-game></spinner-game>
+  </div>
+
+
+
   <section class="top-container">
 
     <div *ngFor="let game of topGames">
@@ -11,7 +20,7 @@
   </section>
 
 
-
+  <paginator-game (pageChange)="getPerPageTopGames($event)"></paginator-game>
 
 
 </main>

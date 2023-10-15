@@ -9,7 +9,7 @@ color: rgb(255, 255, 255);
 
 .titles{
   font-family: 'Bebas Neue', sans-serif;
-  color: #00bf23;
+  color: #ffffff;
   font-size: 20px;
 }
 
@@ -57,7 +57,7 @@ color: rgb(255, 255, 255);
 
 .title-game{
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 55px;
+  font-size:60px;
   color: #ffffff;
 }
 
@@ -214,6 +214,10 @@ color: rgb(255, 255, 255);
     border-radius: 6px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
+  }
+
+  .title-game{
+    font-size: 50px;
   }
 
 
