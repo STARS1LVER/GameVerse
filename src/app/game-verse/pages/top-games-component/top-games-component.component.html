@@ -11,7 +11,7 @@
 
 
 
-  <section class="top-container">
+  <section class="top-container" *ngIf="!isLoading">
 
     <div *ngFor="let game of topGames">
       <card-game [gameList]="game"></card-game>
@@ -20,7 +20,7 @@
   </section>
 
 
-  <paginator-game (pageChange)="getPerPageTopGames($event)"></paginator-game>
+  <paginator-game *ngIf="!isLoading" (pageChange)="getPerPageTopGames($event)"></paginator-game>
 
 
 </main>

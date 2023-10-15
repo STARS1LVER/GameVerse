@@ -21,10 +21,12 @@ export class TopGamesComponent implements OnInit {
   }
 
   public topGamesList(page: number) {
+    this.isLoading = true;
     this.gameVerseService.getTopGames(page).subscribe({
       next: (respuesta) => {
         setTimeout(() => {
           this.topGames = respuesta;
+          this.isLoading = false
         }, 1500);
       },
     });
