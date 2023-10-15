@@ -15,21 +15,23 @@ export class InfoGameComponent implements OnInit {
   public game!: GameInfo;
 
 
-
+  // Inyectamos en el constructor
   constructor(
     private activatedRoute: ActivatedRoute ,
     private gameVerseServicio: GameVerveService,
     private route: Router
   ){}
 
-
+  // usamos los ciclos de vida de del componenente para acceder a los parametros de la ruta
   ngOnInit(): void {
    this.activatedRoute.params
+  //  Usamos el pipe y accedemos al operador de rxjs y usamos al swicthmap
+  // Para acceder al id que trae la ruta
    .pipe(
     switchMap(({ id }) => this.gameVerseServicio.getInfoGameById(id))
    )
    .subscribe((respuesta) => {
-
+    // Si no existe el id llevame a la pagina principal
     if( !respuesta ) return this.route.navigate(['/gameverse/welcome-page'])
 
     this.game = respuesta;
