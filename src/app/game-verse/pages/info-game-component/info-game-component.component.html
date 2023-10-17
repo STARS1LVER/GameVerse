@@ -28,12 +28,23 @@
             </div>
           </div>
 
-          <div class="cont-p-tags">
-            <h5 class="title-genres">Tags <i class="fa-solid fa-hashtag fa-2xs" style="color: #00bf23;"></i> : </h5>
-            <div class="cont-tags">
+          <div class="cont-p-more">
+            <h5 class="title-more">Tags <i class="fa-solid fa-hashtag fa-2xs" style="color: #00bf23;"></i> : </h5>
+            <div class="cont-more">
               <div *ngFor="let tags of game.tags.slice(0,5)">
-                <button  class="button-tags">
+                <button  class="button-more">
                   {{ tags.name}}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cont-p-more">
+            <h5 class="title-more">Ratings <i class="fa-solid fa-hashtag fa-2xs" style="color: #00bf23;"></i> : </h5>
+            <div class="cont-more">
+              <div *ngFor="let tags of game.ratings">
+                <button  class="button-more">
+                  {{ tags.title}}
                 </button>
               </div>
             </div>
@@ -49,6 +60,7 @@
         </div>
         <h5>  <span class="titles">Rating:</span> {{game.rating}} <i class="fa-solid fa-star fa-xs" style="color:#00bf23 ;"></i> </h5>
         <h5> <span class="titles">Released:</span> {{game.released}} <i class="fa-regular fa-calendar fa-xs" style="color: #00bf23;"></i> </h5>
+
         <p>
           {{game.description_raw | descriptionPipe }}
         </p>

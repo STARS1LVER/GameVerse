@@ -105,7 +105,7 @@ color: rgb(255, 255, 255);
   padding: 10px;
 }
 
-.title-genres{
+.title-more{
   font-family: 'Bebas Neue', sans-serif;
   font-size: 29px;
   color: #ffffff;
@@ -141,7 +141,7 @@ color: rgb(255, 255, 255);
 
 
 
-.button-tags{
+.button-more{
   background-color: rgb(14, 14, 14);
   color: rgb(255, 255, 255);
   border: 1px solid #00bf23;
@@ -151,7 +151,9 @@ color: rgb(255, 255, 255);
 
 }
 
-.cont-tags{
+
+
+.cont-more{
   padding: 5px;
   /* border: 1px solid red; */
   display: flex;
