@@ -2,13 +2,14 @@
 
 main{
   font-family: 'Gabarito', cursive;
+  height: 100%;
 }
 
 
 
 /* Section dentro del main */
 .section-main{
-  height: 100vh;
+  /* height: 100vh; */
   background-color: rgb(14, 14, 14);
   /* background-color: rgb(29, 29, 29); */
   /* border: 1px solid red; */

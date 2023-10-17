@@ -20,7 +20,7 @@
   </section>
 
 
-  <paginator-game *ngIf="!isLoading" (pageChange)="getPerPageTopGames($event)"></paginator-game>
+  <paginator-game [ngClass]="{'ocultar': isLoading}"  (pageChange)="getPerPageTopGames($event)"></paginator-game>
 
 
 </main>

@@ -19,7 +19,7 @@
 
   </section>
 
-  <paginator-game *ngIf="!isloading" (pageChange)="onPageChanged($event)"></paginator-game>
+  <paginator-game [ngClass]="{'ocultar': isloading}" (pageChange)="onPageChanged($event)"></paginator-game>
 
 
 

@@ -12,7 +12,7 @@ export class ListGamePageComponent implements OnInit {
 
   // Propiedades:
   public listGames!: Result[];
-  public currentPage: number = 1;
+  public currentpage: number = 1;
   // Propiedad para controlar el spinner
   public isloading: boolean = true;
 
@@ -21,7 +21,7 @@ export class ListGamePageComponent implements OnInit {
 
   ngOnInit(): void {
     // Llamamos al metodo
-    this.onPageChanged( this.currentPage );
+    this.onPageChanged( this.currentpage );
   }
 
   /**
@@ -40,7 +40,7 @@ export class ListGamePageComponent implements OnInit {
         }, 1500);
       },
       error: ( err ) => {
-        console.log(`Hay un pequeño: ${err}`);
+        console.log(`Hay un error: ${err}`);
       },
     });
   }
@@ -52,13 +52,14 @@ export class ListGamePageComponent implements OnInit {
    * @returns void
    */
   public onPageChanged( page: number ) {
-    this.currentPage = page;
 
-    console.log( this.currentPage );
-    console.log( page );
+    this.currentpage = page;
 
-    if (this.currentPage <= 0) return;
+    // console.log( "el emit",page );
+    // console.log( "desde list",this.currentpage );
 
-    this.getGames( this.currentPage );
+    if (this.currentpage <= 0) return;
+
+    this.getGames( this.currentpage );
   }
 }
