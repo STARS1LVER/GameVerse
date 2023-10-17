@@ -23,7 +23,6 @@ color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   background-size: cover;
 
-
 }
 
 
@@ -190,18 +189,25 @@ color: rgb(255, 255, 255);
     /* border: 1px solid red; */
     width: auto;
     height: 100%;
+    background-size:contain;
+    /* background: rgba(0, 0, 0, 0.5); */
+
+
 
 
   }
 
 
   .contendor-info{
+    /* border: 1px solid blue; */
     height: 100%;
     width: auto;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 86%, rgba(0,212,255,0) 100%);
   }
 
   .content-info-img{
@@ -226,10 +232,10 @@ color: rgb(255, 255, 255);
   }
 
 
-
   .cont-card{
     display: flex;
     flex-direction: column;
+
   }
 
   .cont-tags{
