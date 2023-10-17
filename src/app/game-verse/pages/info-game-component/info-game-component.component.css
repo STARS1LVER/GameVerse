@@ -1,5 +1,6 @@
 
 main{
+/* height: 100 */
 font-family: 'Gabarito', cursive;
 color: rgb(255, 255, 255);
 
@@ -27,12 +28,13 @@ color: rgb(255, 255, 255);
 
 
 .content-info-img{
+
   width: 700px;
   height: 350px;
 }
 
 .content-info-img img {
-
+  margin-top: 20px;
   object-fit: cover;
   border-radius: 6px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
