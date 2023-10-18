@@ -25,6 +25,7 @@ import { SpinnerGameComponent } from './components/spinner-game/spinner-game.com
 
 // Pipes
 import { DescriptionPipe } from './pipes/description.pipe';
+import { CardExtraComponent } from './components/card-extra/card-extra.component';
 
 
 
@@ -44,7 +45,8 @@ import { DescriptionPipe } from './pipes/description.pipe';
     CardGameComponent,
     PaginatorGameComponent,
     SpinnerGameComponent,
-    DescriptionPipe
+    DescriptionPipe,
+    CardExtraComponent
   ],
   imports: [
     CommonModule,
