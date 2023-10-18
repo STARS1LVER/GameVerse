@@ -4,6 +4,7 @@ import { environments } from 'src/app/environments/environments';
 import { GameVerse, Result } from '../interfaces/list-games.interface';
 import { Observable, map } from 'rxjs';
 import { GameInfo } from '../interfaces/game-info.interface';
+import { Platform, ResultPlatform } from '../interfaces/platform.interface';
 
 @Injectable({providedIn: 'root'})
 
@@ -46,12 +47,22 @@ export class GameVerveService {
    * @returns un obersvable que emite un arreglo de Result
    */
   public getTopGames(page: number): Observable<Result[]>{
-    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?dates=2022-01-01,2023-10-01&ordering=-added&key=${this.apiKey}&page=${page}&page_size=12`)
+    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?dates=2022-01-01,2024-04-01&ordering=-added&key=${this.apiKey}&page=${page}&page_size=12`)
     .pipe(
       map( respuesta => respuesta.results )
     )
   }
 
+  /**
+   * Este metodo nos permite traer las plataformas
+   * @returns
+   */
+  public getListPlatform(): Observable<ResultPlatform[]>{
+    return this.httpClient.get<Platform>(`${this.baseUrl}platforms?key=${this.apiKey}`)
+    .pipe(
+      map( respuesta => respuesta.results.slice(0,16) )
+    )
+  }
 
 
 

@@ -42,9 +42,9 @@
           <div class="cont-p-more">
             <h5 class="title-more">Ratings <i class="fa-solid fa-hashtag fa-2xs" style="color: #00bf23;"></i> : </h5>
             <div class="cont-more">
-              <div *ngFor="let tags of game.ratings">
+              <div *ngFor="let publi of game.ratings">
                 <button  class="button-more">
-                  {{ tags.title}}
+                  {{ publi.title | titlecase }}
                 </button>
               </div>
             </div>
