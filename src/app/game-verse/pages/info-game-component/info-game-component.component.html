@@ -1,19 +1,18 @@
 <main>
 
+<div class="content-spinner" *ngIf="isLoading">
+  <spinner-game></spinner-game>
+</div>
 
-  <div class="content-spinner" *ngIf="isLoading">
-    <spinner-game></spinner-game>
-  </div>
 
-
-  <section  class="section-info" ngOptimizedImage *ngIf="game && !isLoading"  fetchPriority="high" [ngStyle]="{
+  <section  class="section-info"  *ngIf="game && !isLoading" [ngStyle]="{
     'background-image': 'linear-gradient(0deg, rgba(0,0,0,1) 13%, rgba(0,191,35,0) 100%), url(' + game.background_image_additional + ')'
   }">
 
-    <div class="contendor-info">
+    <div class="contendor-info"  >
 
       <div class="contenedor-back">
-        <h2 class="title-game title-2 text-shadow-pop-bottom "> {{game.name}} </h2>
+        <h2 class="title-game title-2 text-shadow-pop-bottom "> {{ game.name | titleGame }} </h2>
         <div class="content-info-img " ngOptimizedImage>
           <img class="" [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
         </div>
@@ -54,42 +53,43 @@
       </div>
 
       <div class="cont-text">
-        <h2 class="title-game text-shadow-pop-bottom "> {{game.name}} </h2>
+        <h2 class="title-game text-shadow-pop-bottom " [title]="game.name"> {{game.name | titleGame }} </h2>
         <div class="content-info-img-responsive " ngOptimizedImage>
           <img class="" [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
         </div>
-        <h5>  <span class="titles">Rating:</span> {{game.rating}} <i class="fa-solid fa-star fa-xs" style="color:#00bf23 ;"></i> </h5>
-        <h5> <span class="titles">Released:</span> {{game.released}} <i class="fa-regular fa-calendar fa-xs" style="color: #00bf23;"></i> </h5>
+        <h6> <span class="titles">Rating:</span>  {{game.rating}} <i class="fa-solid fa-star fa-xs" style="color:#00bf23 ;"></i> </h6>
+        <h6> <span class="titles">Released:</span>  {{game.released}} <i class="fa-regular fa-calendar fa-xs" style="color: #00bf23;"></i> </h6>
+        <h6> <span class="titles">MetaScore: </span>  <span class="title-meta"> {{game.metacritic}} </span> <i class="fa-solid fa-flag-checkered" style="color: #00bf23;"></i> </h6>
 
         <p>
           {{game.description_raw | descriptionPipe }}
         </p>
-        <div class="platform">
-          <h5 class="titles">Platform <i class="fa-solid fa-layer-group fa-xs" style="color: #00bf23 ;"></i> :</h5>
-          <div *ngFor="let platform of game.parent_platforms.slice(0,3)">
-            <button  class="button-p">
-              {{platform.platform.name}} <span class="btn-span"> <i class="fa-brands fa-{{ platform.platform.slug === 'pc' ? 'steam' : platform.platform.slug }}" fa-2xs style="color: #ffffff;"></i>
-              </span>
-            </button>
-          </div>
-        </div>
-
-        <div class="website titles">
-          <h5> WEBSITE <i class="fa-solid fa-globe fa-xs" style="color: #00bf23 ;"></i>  : <br> <a [href]="game.website" target="_blank">Go to the official website.  </a>  </h5>
-
-        </div>
-
-        <div>
-          <h5 class="titles"> Developers <i class="fa-solid fa-code fa-xs" style="color: #00bf23;"></i> : </h5>
-            <div *ngFor="let dev of game.developers">
-              <button class="button-p">
-                {{dev.name | titlecase }}
+        <div class="plat-web-dev">
+          <div class="platform">
+            <h5 class="titles">Platforms <i class="fa-solid fa-layer-group fa-xs" style="color: #00bf23 ;"></i> :</h5>
+            <div *ngFor="let platform of game.platforms.slice(0,4)">
+              <button [routerLink]="['/gameverse/platform-list',platform.platform.id]"  class="button-p"  >
+                {{platform.platform.name}} <span class="btn-span"> <i class="fa-brands fa-{{ showIconForNames(platform.platform.slug)}}" fa-2xs style="color: #ffffff;"></i>
+                </span>
               </button>
             </div>
+            <div class="website titles">
+              <h5> WEBSITE <i class="fa-solid fa-globe fa-xs" style="color: #00bf23 ;"></i>  : <br> <a [href]="game.website" target="_blank">Go to the official website.  </a>  </h5>
+
+            </div>
+          </div>
+
+
+          <div>
+            <h5 class="titles"> Developers <i class="fa-solid fa-code fa-xs" style="color: #00bf23;"></i> : </h5>
+                <div *ngFor="let dev of game.developers.slice(0,3)">
+                  <button class="button-p">
+                    {{dev.name | titlecase }}
+                  </button>
+                </div>
+          </div>
+
         </div>
-
-
-
 
 
       </div>

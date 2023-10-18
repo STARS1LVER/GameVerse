@@ -11,10 +11,21 @@ i{
 }
 
 
+
+
 .card-p h5 {
-  color: #00bf23;
+
+  color: #ffffff;
   font-family: 'Bebas Neue', sans-serif;
 }
+
+
+.card-p h5:hover{
+  color: #00bf23;
+  transition: 1s;
+  cursor: pointer;
+}
+
 .content-img{
   height: 190px;
   padding: 5px;
@@ -22,7 +33,40 @@ i{
 
 }
 
+.button-extra{
+  text-align: center;
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  border: 1px solid #00bf23;
+  border-radius: 8px;
+}
+
+.button-extra:hover{
+  background-color: #555555;
+  transition: 1s;
+  cursor: pointer;
+}
+
+
+li:hover{
+  background-color: #555555;
+  transition: 1s;
+  cursor: pointer;
+}
+
+
+.popular{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #00bf23;
+  /* padding-bottom: 6px */
+  margin-bottom: 10px;
+}
+
 .card-title{
+  /* background-color: #141414; */
+  border-radius: 6px;
+  /* border: 1px solid #00bf23; */
   font-size: 30px;
   text-align: center;
 }

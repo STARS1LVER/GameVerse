@@ -33,20 +33,43 @@ export class InfoGameComponent implements OnInit {
     switchMap(({ id }) => this.gameVerseServicio.getInfoGameById(id))
    )
    .subscribe((respuesta) => {
-    this.isLoading = true;
-    // Si no existe el id llevame a la pagina principal
-    if( !respuesta ) return this.route.navigate(['/gameverse/welcome-page'])
+     // Si no existe el id llevame a la pagina principal
+     if( !respuesta ) return this.route.navigate(['/gameverse/welcome-page'])
 
+     this.isLoading = true;
     setTimeout(() =>{
       this.game = respuesta;
       this.isLoading = false
-    },1000)
+    },2500)
 
     return
 
    })
   }
 
+
+  /**
+   *
+   * @param platform
+   * @returns
+   */
+  public showIconForNames(platform: string){
+
+    switch(platform){
+      case 'pc':
+        return 'steam'
+      case 'xbox-one':
+      case 'xbox-series-x':
+        return 'xbox'
+      case 'playstation5':
+      case 'playstation4':
+        return 'playstation'
+      default:
+        return platform
+
+    }
+
+  }
 
 
 

@@ -3,10 +3,15 @@
     <img [src]="platformList.image_background" fetchPriority="high" height="100%" width="100%" class="" alt="...">
   </div>
   <div class="card-body">
-    <h5 class="card-title"> {{platformList.name}} </h5>
-    <!-- <i class="fa-brands fa-{{ platformList.slug === 'pc' ? 'steam' : platformList.slug }}" fa-2xs style="color: #ffffff;"></i> -->
-
-    <!-- <p class="card-text"> <span> Released:  </span> <i class="fa-regular fa-calendar" style="color: #00bf23;"></i> <br> <span> Rating: {{gameList.rating}} </span> <i class="fa-solid fa-star" style="color: #00bf23;;"></i>   </p> -->
-    <!-- <button [routerLink]="['/gameverse/platform-list/',platformList.id]" class=""> <span>See More  <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> </span>  </button> -->
+    <h5 class="card-title" [routerLink]="['/gameverse/platform-list',platformList.id]"> {{platformList.name}} </h5>
+    <div>
+      <div class="popular">
+        <h6>Popular Items</h6>
+        <span> {{ platformList.games_count }}  </span>
+      </div>
+      <ul  *ngFor="let game of platformList.games.slice(0,3)">
+          <li class="button-extra" [routerLink]="['/gameverse/info-game',game.id]" > {{game.name}} </li>
+      </ul>
+    </div>
   </div>
 </div>

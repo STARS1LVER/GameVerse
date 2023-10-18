@@ -1,23 +1,54 @@
 
 main{
-/* height: 100 */
+height: 100vh;
+/* background-color: #383838; */
 font-family: 'Gabarito', cursive;
+display: flex;
+justify-content: center;
+align-items: center;
 color: rgb(255, 255, 255);
+
+/* border: 6px solid red; */
 
 
 }
+
+
+.content-spinner{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+
+}
+
 
 
 .titles{
   font-family: 'Bebas Neue', sans-serif;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 17px;
+}
+
+.title-meta{
+  padding: 3px;
+  /* background-color: #383838; */
+  border: 1px solid #00bf23;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .section-info{
-  /* border: 1px solid red; */
-  height: 100vh;
+  padding-top: 20px;
+  /* border: 1px solid rgb(4, 255, 0); */
+  /* margin-top: 50px; */
+  /* width: 1200px; */
+  /* min-height: 700px; */
   display: flex ;
+  height: 100vh;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
@@ -27,9 +58,8 @@ color: rgb(255, 255, 255);
 
 
 .content-info-img{
-
-  width: 700px;
-  height: 350px;
+  width: 600px;
+  height: 300px;
 }
 
 .content-info-img img {
@@ -53,7 +83,6 @@ color: rgb(255, 255, 255);
 
 
 .cont-text{
-  padding: 8px;
   /* border: 1px solid tomato; */
   width: 420px;
 }
@@ -61,7 +90,7 @@ color: rgb(255, 255, 255);
 
 .title-game{
   font-family: 'Bebas Neue', sans-serif;
-  font-size:60px;
+  font-size:45px;
   color: #ffffff;
 }
 
@@ -168,7 +197,10 @@ color: rgb(255, 255, 255);
   border: 1px solid orange;
 } */
 
-
+.cont-dev{
+  display: flex;
+  border: 1px solid red;
+}
 
 .website a {
   font-size: 18px;
@@ -187,22 +219,36 @@ color: rgb(255, 255, 255);
 }
 
 
+i{
+  margin-left: 4px;
+}
+
+.plat-web-dev{
+  border: 1px solid forestgreen;
+  display: flex;
+}
+
 
 @media screen and (max-width: 600px) {
 
+  main{
+    height: 100%;
+
+  }
+
+
+
 
   .section-info{
-    /* border: 1px solid red; */
-    width: auto;
+    border: 1px solid red;
     height: 100%;
+    width: auto;
+    /* height: 100%; */
     background-size:contain;
     /* background: rgba(0, 0, 0, 0.5); */
 
 
-
-
   }
-
 
   .contendor-info{
     /* border: 1px solid blue; */
@@ -234,21 +280,30 @@ color: rgb(255, 255, 255);
   }
 
   .title-game{
-    font-size: 50px;
+    font-size: 45px;
   }
 
 
   .cont-card{
+    /* border: 1px solid rebeccapurple; */
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 
   }
 
   .cont-more{
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
 
   }
+
+  /* .cont-genres{
+    border: 1px solid yellow;
+    width: 350px;
+  } */
 
   .cont-tags{
     display: flex;
@@ -265,6 +320,13 @@ color: rgb(255, 255, 255);
   .contenedor-back{
     min-width: 320px;
     /* background-color: aqua; */
+  }
+
+  .plat-web-dev{
+    border: 1px solid forestgreen;
+    width: auto;
+    display: flex;
+    flex-direction: column;
   }
 
 }

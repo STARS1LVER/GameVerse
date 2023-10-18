@@ -8,8 +8,8 @@ export class DescriptionPipe implements PipeTransform {
 
 
   transform(description: string): string {
-      if( description.length > 250){
-        let descriptionReduce = description.substring(0,450)
+      if( description.length > 450){
+        let descriptionReduce = description.substring(0,420)
         return descriptionReduce += '.'
       }
       return description
