@@ -1,0 +1,75 @@
+
+.card-p{
+  background-color: rgb(39, 40, 40);
+  color: rgb(255, 255, 255);
+
+}
+
+
+i{
+  margin-left: 5px;
+}
+
+
+.card-p h5 {
+  color: #00bf23;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.content-img{
+  height: 190px;
+  padding: 5px;
+  width: 286px;
+
+}
+
+.card-title{
+  font-size: 30px;
+  text-align: center;
+}
+
+.content-img img {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+
+button {
+  background-color: #212121;
+  border-radius: 0.3em;
+  border: 0.08em solid #00bf23;
+  font-size: 12px;
+  height: 4.2em;
+  margin-top: 5px;
+  padding: 0.1em 0.25em;
+  width: 13em;
+}
+
+button span {
+  align-items: center;
+  background-color: #212121;
+  border-radius: 0.2em;
+  border: 0.08em solid #00bf23;
+  bottom: 0.4em;
+  box-shadow: 0 0.4em 0.1em 0.019em #00bf23;
+  color: #fff;
+  display: flex;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 2.5em;
+  justify-content: center;
+  position: relative;
+  width: 8.25em;
+
+}
+
+button span:hover {
+  transition: all 0.5s;
+  transform: translate(0, 0.4em);
+  box-shadow: 0 0 0 0 #fff;
+}
+
+button span:not(hover) {
+  transition: all 1s;
+}
+

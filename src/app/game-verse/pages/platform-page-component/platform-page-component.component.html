@@ -1,12 +1,12 @@
 <main>
 
-  <h2 class="title-game text-shadow-pop-bottom ">PLATFORM</h2>
+  <h2 class="title-game text-shadow-pop-bottom ">PLATFORMS</h2>
 
 
-  <section>
+  <section class="platform-container">
 
-    <div>
-        
+    <div  *ngFor="let platform of platformList">
+      <card-extra [platformList]="platform" ></card-extra>
     </div>
 
   </section>

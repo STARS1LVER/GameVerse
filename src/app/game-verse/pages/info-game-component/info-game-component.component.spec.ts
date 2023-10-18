@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoGameComponentComponent } from './info-game-component.component';
+import { InfoGameComponent } from './info-game-component.component';
 
 describe('InfoGameComponentComponent', () => {
-  let component: InfoGameComponentComponent;
-  let fixture: ComponentFixture<InfoGameComponentComponent>;
+  let component: InfoGameComponent;
+  let fixture: ComponentFixture<InfoGameComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InfoGameComponentComponent ]
+      declarations: [ InfoGameComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InfoGameComponentComponent);
+    fixture = TestBed.createComponent(InfoGameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

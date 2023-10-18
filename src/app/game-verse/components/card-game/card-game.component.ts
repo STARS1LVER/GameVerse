@@ -10,7 +10,7 @@ export class CardGameComponent implements OnInit {
 
   // Creamos un input donde recibiremos la informacion desde el padre
   @Input()
-  gameList!: Result
+  public gameList!: Result
 
   ngOnInit(): void {
     // Si no existe la propiedad arrojame un error

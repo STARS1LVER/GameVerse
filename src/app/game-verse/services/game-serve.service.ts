@@ -60,7 +60,7 @@ export class GameVerveService {
   public getListPlatform(): Observable<ResultPlatform[]>{
     return this.httpClient.get<Platform>(`${this.baseUrl}platforms?key=${this.apiKey}`)
     .pipe(
-      map( respuesta => respuesta.results.slice(0,16) )
+      map( respuesta => respuesta.results.slice(0,20) )
     )
   }
 
