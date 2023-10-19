@@ -39,12 +39,14 @@ i{
   color: rgb(255, 255, 255);
   border: 1px solid #00bf23;
   border-radius: 8px;
+  font-weight: bold;
 }
 
 .button-extra:hover{
   background-color: #555555;
   transition: 1s;
   cursor: pointer;
+  color: #000000;
 }
 
 

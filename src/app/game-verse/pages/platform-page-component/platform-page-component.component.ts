@@ -25,10 +25,15 @@ export class PlatformPageComponent implements OnInit {
 
   public getListPlatform(): void {
 
+    this.isLoading = true;
+
     this.gameVerveService.getListPlatform()
     .subscribe({
       next: ( respuesta ) => {
-        this.platformList = respuesta
+        setTimeout(() => {
+          this.platformList = respuesta
+          this.isLoading = false
+        },1500)
       },
       error: (error) => {
         console.log(`Hay un error: ${error}`)

@@ -3,7 +3,13 @@
   <h2 class="title-game text-shadow-pop-bottom ">PLATFORMS</h2>
 
 
-  <section class="platform-container">
+
+  <div class="content-spinner" *ngIf="isLoading">
+    <spinner-game></spinner-game>
+  </div>
+
+
+  <section class="platform-container" *ngIf="!isLoading">
 
     <div  *ngFor="let platform of platformList">
       <card-extra [platformList]="platform" ></card-extra>

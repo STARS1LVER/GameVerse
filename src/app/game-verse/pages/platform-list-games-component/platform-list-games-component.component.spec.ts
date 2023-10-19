@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlatformListGamesComponentComponent } from './platform-list-games-component.component';
+import { PlatformListGamesComponent } from './platform-list-games-component.component';
 
 describe('PlatformListGamesComponentComponent', () => {
-  let component: PlatformListGamesComponentComponent;
-  let fixture: ComponentFixture<PlatformListGamesComponentComponent>;
+  let component: PlatformListGamesComponent;
+  let fixture: ComponentFixture<PlatformListGamesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlatformListGamesComponentComponent ]
+      declarations: [ PlatformListGamesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PlatformListGamesComponentComponent);
+    fixture = TestBed.createComponent(PlatformListGamesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

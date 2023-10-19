@@ -36,7 +36,7 @@ main{
   }
 
   .platform-container{
-    width: auto;
+
     display: flex;
     flex-direction: column;
   }
