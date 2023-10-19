@@ -60,9 +60,11 @@ export class InfoGameComponent implements OnInit {
         return 'steam'
       case 'xbox-one':
       case 'xbox-series-x':
+      case 'xbox360':
         return 'xbox'
       case 'playstation5':
       case 'playstation4':
+      case 'playstation3':
         return 'playstation'
       default:
         return platform
