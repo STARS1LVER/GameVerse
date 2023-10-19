@@ -49,11 +49,13 @@ export class InfoGameComponent implements OnInit {
 
 
   /**
-   *
-   * @param platform
-   * @returns
+   * Este metodo nos permite para
+   * validar por nombre
+   * dependiendo el caso dira si es steam, xbox, playstation
+   * @param platform es de tipo string
+   * @returns retorna un string
    */
-  public showIconForNames(platform: string){
+  public showIconForNames(platform: string) : string{
 
     switch(platform){
       case 'pc':
@@ -65,6 +67,7 @@ export class InfoGameComponent implements OnInit {
       case 'playstation5':
       case 'playstation4':
       case 'playstation3':
+      case 'playstation2':
         return 'playstation'
       default:
         return platform

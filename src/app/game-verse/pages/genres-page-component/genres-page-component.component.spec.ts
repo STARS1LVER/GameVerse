@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenresPageComponentComponent } from './genres-page-component.component';
+import { GenresPageComponent } from './genres-page-component.component';
 
 describe('GenresPageComponentComponent', () => {
-  let component: GenresPageComponentComponent;
-  let fixture: ComponentFixture<GenresPageComponentComponent>;
+  let component: GenresPageComponent;
+  let fixture: ComponentFixture<GenresPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GenresPageComponentComponent ]
+      declarations: [ GenresPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GenresPageComponentComponent);
+    fixture = TestBed.createComponent(GenresPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

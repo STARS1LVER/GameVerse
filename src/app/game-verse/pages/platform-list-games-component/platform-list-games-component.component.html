@@ -1,11 +1,12 @@
 <main>
 
+  <h2 class="title-game text-shadow-pop-bottom"> GAMES FOR {{ namePlatform | titlecase }} </h2>
 
 
-  <section>
+  <section class="contenedor-list-platform" >
 
     <div *ngFor="let platList of listPlatformGames">
-      <card-game [gameList]="platList" ></card-game>
+      <card-game [gameList]="platList"></card-game>
     </div>
 
 
@@ -14,6 +15,7 @@
 
 
 
+  <paginator-game (pageChange)="getPageByEvent($event)" ></paginator-game>
 
 
 

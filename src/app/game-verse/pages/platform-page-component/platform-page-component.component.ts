@@ -33,7 +33,7 @@ export class PlatformPageComponent implements OnInit {
         setTimeout(() => {
           this.platformList = respuesta
           this.isLoading = false
-        },1500)
+        },2000)
       },
       error: (error) => {
         console.log(`Hay un error: ${error}`)

@@ -71,8 +71,8 @@ export class GameVerveService {
    * @param id number
    * @returns observable< Emite un arreglo de tipo ResultListPlatform >
    */
-  public getListGamesForPlatform(id: number): Observable<ResultListPlatform[]>{
-    return this.httpClient.get<PlatformList>(`${this.baseUrl}games?platforms=${id}&key=${this.apiKey}&page=1&page_size=12`)
+  public getListGamesForPlatform(id: number, page: number): Observable<ResultListPlatform[]>{
+    return this.httpClient.get<PlatformList>(`${this.baseUrl}games?platforms=${id}&key=${this.apiKey}&page=${page}&page_size=12`)
     .pipe(
       map( respuesta => respuesta.results )
     )

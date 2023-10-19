@@ -11,6 +11,9 @@ i{
   margin-left: 5px;
 }
 
+.card-text{
+  font-family: 'Gabarito', cursive;
+}
 
 .card-p h5 {
   color: #00bf23;

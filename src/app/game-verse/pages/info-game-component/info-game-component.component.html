@@ -18,7 +18,7 @@
         </div>
 
         <div class="cont-genres">
-          <h5 class="title-genres">Genres <i class="fa-solid fa-cube fa-2xs" style="color: #00bf23;"></i> :</h5>
+          <h5 class="title-more">Genres <i class="fa-solid fa-cube fa-2xs" style="color: #00bf23;"></i> :</h5>
           <div class="cont-card">
             <div class="genres" *ngFor="let genres of game.genres.slice(0,4)" [ngStyle]="{
               'background-image': 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)), url(' + genres.image_background + ')'
@@ -68,7 +68,7 @@
           <div class="platform">
             <h5 class="titles">Platforms <i class="fa-solid fa-layer-group fa-xs" style="color: #00bf23 ;"></i> :</h5>
             <div *ngFor="let platform of game.platforms.slice(0,4)">
-              <button [routerLink]="['/gameverse/platform-list',platform.platform.id]"  class="button-p"  >
+              <button [routerLink]="['/gameverse/platform-list',platform.platform.slug,platform.platform.id]"  class="button-p"  >
                 {{platform.platform.name}} <span class="btn-span"> <i class="fa-brands fa-{{ showIconForNames(platform.platform.slug)}}" fa-2xs style="color: #ffffff;"></i>
                 </span>
               </button>

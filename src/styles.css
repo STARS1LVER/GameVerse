@@ -41,3 +41,9 @@
   display: none;
 }
 
+.title-game{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size:80px;
+  color: #ffffff;
+  margin-top: 20px;
+}
