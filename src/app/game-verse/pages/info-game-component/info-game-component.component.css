@@ -224,7 +224,7 @@ i{
 }
 
 .plat-web-dev{
-  border: 1px solid forestgreen;
+  /* border: 1px solid forestgreen; */
   display: flex;
 }
 
@@ -233,15 +233,16 @@ i{
 
   main{
     height: 100%;
-
+    width: auto;
   }
 
 
 
 
   .section-info{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 100%;
+    padding: 10px;
     width: auto;
     /* height: 100%; */
     background-size:contain;
@@ -323,8 +324,8 @@ i{
   }
 
   .plat-web-dev{
-    border: 1px solid forestgreen;
-    width: auto;
+    /* border: 1px solid forestgreen; */
+    width: 320px;
     display: flex;
     flex-direction: column;
   }
