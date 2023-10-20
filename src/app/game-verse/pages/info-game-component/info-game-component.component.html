@@ -69,7 +69,7 @@
             <h5 class="titles">Platforms <i class="fa-solid fa-layer-group fa-xs" style="color: #00bf23 ;"></i> :</h5>
             <div *ngFor="let platform of game.platforms.slice(0,4)">
               <button [routerLink]="['/gameverse/platform-list',platform.platform.slug,platform.platform.id]"  class="button-p"  >
-                {{platform.platform.name}} <span class="btn-span"> <i class="fa-brands fa-{{ showIconForNames(platform.platform.slug)}}" fa-2xs style="color: #ffffff;"></i>
+                {{platform.platform.name}} <span class="btn-span"> <i class=" {{ showIconForNames(platform.platform.slug)}}" fa-2xs style="color: #ffffff;"></i>
                 </span>
               </button>
             </div>

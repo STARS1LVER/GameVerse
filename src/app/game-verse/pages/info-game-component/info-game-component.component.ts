@@ -59,18 +59,18 @@ export class InfoGameComponent implements OnInit {
 
     switch(platform){
       case 'pc':
-        return 'steam'
+        return 'fa-brands fa-steam'
       case 'xbox-one':
       case 'xbox-series-x':
       case 'xbox360':
-        return 'xbox'
+        return 'fa-brands fa-xbox'
       case 'playstation5':
       case 'playstation4':
       case 'playstation3':
       case 'playstation2':
-        return 'playstation'
+        return 'fa-brands fa-playstation'
       default:
-        return platform
+        return 'fa-solid fa-gamepad'
 
     }
 
