@@ -1,0 +1,8 @@
+main{
+  height: 100%;
+  font-family: 'Gabarito', cursive;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

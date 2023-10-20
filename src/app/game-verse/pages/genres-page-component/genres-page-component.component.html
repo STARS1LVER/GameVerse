@@ -1,1 +1,28 @@
-<p>genres-page-component works!</p>
+
+<main>
+
+  <h2 class="title-game text-shadow-pop-bottom">GENRES</h2>
+
+
+
+  <section class="content-cards">
+    <div *ngFor="let genres of listGenresOpcion">
+      <card-extra [platformList]="genres" [opcionView]="opcionCard"  ></card-extra>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>

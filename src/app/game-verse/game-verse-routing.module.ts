@@ -28,7 +28,7 @@ const routes: Routes = [
       { path: 'platform-games',    component: PlatformPageComponent      },
       { path: 'info-game/:id',     component: InfoGameComponent          },
       { path: 'platform-list/:name/:id', component: PlatformListGamesComponent },
-      { path: 'genres-list/:id',   component: GenresListGamesComponent   },
+      { path: 'genres-list/:name/:id',   component: GenresListGamesComponent   },
       { path: '**',                redirectTo: 'welcome-page'            },
     ]
   }

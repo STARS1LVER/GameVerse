@@ -8,6 +8,6 @@
       <i class="fa-brands fa-{{ platform.platform.slug === 'pc' ? 'steam' : platform.platform.slug }}" fa-2xs style="color: #ffffff;"></i>
     </span>
     <p class="card-text"> <span> Released: {{gameList.released}} </span> <i class="fa-regular fa-calendar" style="color: #00bf23;"></i> <br> <span> Rating: {{gameList.rating}} </span> <i class="fa-solid fa-star" style="color: #00bf23;;"></i>   </p>
-    <button [routerLink]="['/gameverse/info-game/',gameList.id]" class=""> <span>See More  <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> </span>  </button>
+    <button  [routerLink]="['/gameverse/info-game/',gameList.id]" class=""> <span>See More  <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> </span>  </button>
   </div>
 </div>

@@ -12,7 +12,7 @@
   <section class="platform-container" *ngIf="!isLoading">
 
     <div  *ngFor="let platform of platformList">
-      <card-extra [platformList]="platform" ></card-extra>
+      <card-extra [platformList]="platform" [opcionView]="opcion" ></card-extra>
     </div>
 
   </section>

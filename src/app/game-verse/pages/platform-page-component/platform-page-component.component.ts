@@ -11,6 +11,7 @@ export class PlatformPageComponent implements OnInit {
   // Propiedades:
   public platformList!: ResultPlatform[];
   public isLoading: boolean = false;
+  public opcion: string = 'platform-list'
 
 
   constructor(

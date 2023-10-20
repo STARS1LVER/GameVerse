@@ -6,6 +6,7 @@ import { Observable, map } from 'rxjs';
 import { GameInfo } from '../interfaces/game-info.interface';
 import { Platform, ResultPlatform } from '../interfaces/platform.interface';
 import { PlatformList, ResultListPlatform } from '../interfaces/platform-list-games.interface';
+import { Genres, ResultGenres } from '../interfaces/genres.interface';
 
 @Injectable({providedIn: 'root'})
 
@@ -75,6 +76,18 @@ export class GameVerveService {
     return this.httpClient.get<PlatformList>(`${this.baseUrl}games?platforms=${id}&key=${this.apiKey}&page=${page}&page_size=12`)
     .pipe(
       map( respuesta => respuesta.results )
+    )
+  }
+
+
+  /**
+   * Este metodo nos trae la lista de opciones de generos
+   * @returns un obsevable que emite un arreglo de resultGenres
+   */
+  public getListGenres() : Observable<ResultGenres[]> {
+    return this.httpClient.get<Genres>(`${this.baseUrl}genres?key=${this.apiKey}`)
+    .pipe(
+      map( respuesta => respuesta.results.slice(0,16) )
     )
   }
 
