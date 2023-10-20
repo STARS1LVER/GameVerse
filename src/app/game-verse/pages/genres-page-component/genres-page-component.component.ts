@@ -5,39 +5,43 @@ import { GameVerveService } from '../../services/game-serve.service';
 @Component({
   selector: 'app-genres-page-component',
   templateUrl: './genres-page-component.component.html',
-  styleUrls: ['./genres-page-component.component.css']
+  styleUrls: ['./genres-page-component.component.css'],
 })
-export class GenresPageComponent  implements OnInit {
-
+export class GenresPageComponent implements OnInit {
   // Propiedades:
   public listGenresOpcion!: ResultGenres[];
   public isLoading: boolean = false;
-  public opcionCard: string = 'genres-list'
+  public opcionCard: string = 'genres-list';
 
-  constructor( private gameVerseService: GameVerveService ){}
-
+  // Inyectamos en el constructor
+  constructor(private gameVerseService: GameVerveService) {}
 
   ngOnInit(): void {
-    this.getListOpcionsGenres()
-
+    this.getListOpcionsGenres();
   }
 
+  /**
+   * este metodos nos permite obtener y asignarle
+   * valor a la propiedad platformList
+   * @returns void
+   */
   public getListOpcionsGenres(): void {
 
-    this.gameVerseService.getListGenres()
-    .subscribe({
-      next: (respuesta) =>{
-        this.listGenresOpcion = respuesta
+    // le asignamos el valor true para que se muestre
+    this.isLoading = true;
+
+    this.gameVerseService.getListGenres().subscribe({
+      next: (respuesta) => {
+
+        // Usamos el timeOut para mostrar ciertos segundos el spinner
+        setTimeout(() => {
+          this.listGenresOpcion = respuesta;
+          this.isLoading = false
+        }, 1550);
       },
-      error: () =>{
-        console.log('Hay un error!')
-      }
-    })
-
+      error: () => {
+        console.log('Hay un error!');
+      },
+    });
   }
-
-
-
-
-
 }

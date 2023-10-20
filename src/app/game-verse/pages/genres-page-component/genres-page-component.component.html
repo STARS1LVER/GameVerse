@@ -5,10 +5,17 @@
 
 
 
-  <section class="content-cards">
+  <div class="content-spinner" *ngIf="isLoading">
+    <spinner-game></spinner-game>
+  </div>
+
+
+
+  <section class="content-cards" *ngIf="!isLoading">
     <div *ngFor="let genres of listGenresOpcion">
       <card-extra [platformList]="genres" [opcionView]="opcionCard"  ></card-extra>
     </div>
+    😂
   </section>
 
 

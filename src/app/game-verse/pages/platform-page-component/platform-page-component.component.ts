@@ -13,7 +13,7 @@ export class PlatformPageComponent implements OnInit {
   public isLoading: boolean = false;
   public opcion: string = 'platform-list'
 
-
+  // Inyectamos en el constructor
   constructor(
     private gameVerveService: GameVerveService
   ){}
@@ -24,13 +24,20 @@ export class PlatformPageComponent implements OnInit {
   }
 
 
+  /**
+   * este metodos nos permite obtener y asignarle
+   * valor a la propiedad platformList
+   * @returns void
+   */
   public getListPlatform(): void {
 
+    // le asignamos el valor true para que se muestre
     this.isLoading = true;
 
     this.gameVerveService.getListPlatform()
     .subscribe({
       next: ( respuesta ) => {
+        // Usamos el timeOut para mostrar ciertos segundos el spinner
         setTimeout(() => {
           this.platformList = respuesta
           this.isLoading = false
