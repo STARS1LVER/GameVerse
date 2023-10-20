@@ -3,7 +3,12 @@
   <h2 class="title-game text-shadow-pop-bottom"> GAMES FOR {{ namePlatform | titlecase }} </h2>
 
 
-  <section class="contenedor-list-platform" >
+  <div class="content-spinner" *ngIf="isLoading">
+    <spinner-game  ></spinner-game>
+  </div>
+
+
+  <section class="contenedor-list-platform" *ngIf="!isLoading" >
 
     <div *ngFor="let platList of listPlatformGames">
       <card-game [gameList]="platList"></card-game>
@@ -15,7 +20,7 @@
 
 
 
-  <paginator-game (pageChange)="getPageByEvent($event)" ></paginator-game>
+  <paginator-game  [ngClass]="{'ocultar': isLoading}" (pageChange)="getPageByEvent($event)" ></paginator-game>
 
 
 

@@ -34,6 +34,15 @@
   }
 }
 
+.content-spinner{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+
+}
+
 
 
 
@@ -47,3 +56,5 @@
   color: #ffffff;
   margin-top: 20px;
 }
+
+

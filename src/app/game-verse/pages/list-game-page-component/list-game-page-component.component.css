@@ -16,6 +16,14 @@ main{
   color: #ffffff;
 }
 
+.content-spinner{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+
+}
 
 
 .game-container{

@@ -14,6 +14,7 @@ export class PlatformListGamesComponent implements OnInit {
   public listPlatformGames!: ResultListPlatform[];
   public namePlatform!: string;
   public currentPage: number = 1;
+  public isLoading: boolean = false;
   public id!: number;
 
   // Inyectamos dependencias
@@ -43,13 +44,15 @@ export class PlatformListGamesComponent implements OnInit {
    * @param page de tipo number
    */
   public getListPlatformById(page: number) {
+    this.isLoading = true;
     this.gameVerseService
       .getListGamesForPlatform(this.id, page)
       .subscribe((respuesta) => {
         if (!respuesta) return this.route.navigate(['/gameverse/welcome-page']);
-
-        this.listPlatformGames = respuesta;
-
+        setTimeout(() => {
+          this.listPlatformGames = respuesta;
+          this.isLoading = false;
+        }, 1500);
         return;
       });
   }
