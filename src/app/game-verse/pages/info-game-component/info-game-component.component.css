@@ -145,6 +145,12 @@ color: rgb(255, 255, 255);
   font-family: 'Bebas Neue', sans-serif;
   font-size: 29px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.title-action:hover{
+  color: #00bf23;
+  transition: 1s;
 }
 
 .cont-card{

@@ -23,7 +23,7 @@
             <div class="genres" *ngFor="let genres of game.genres.slice(0,4)" [ngStyle]="{
               'background-image': 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)), url(' + genres.image_background + ')'
             }">
-             <h4 class="title-action "> {{genres.name}} </h4>
+             <h4 class="title-action " [routerLink]="['/gameverse/genres-list',genres.name,genres.id]"  > {{genres.name}} </h4>
             </div>
           </div>
 
