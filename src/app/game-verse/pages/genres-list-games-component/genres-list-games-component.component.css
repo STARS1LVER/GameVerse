@@ -8,9 +8,14 @@ main{
 }
 
 
+
+
 @media screen and (max-width: 600px) {
 
 
+  .title-game{
+    font-size: 59px;
+  }
 
   .content-cards{
 

@@ -16,3 +16,18 @@ main{
   grid-template-rows: repeat(3,1fr);
   gap: 14px;
 }
+
+
+@media screen and (max-width: 600px) {
+
+
+  .title-game{
+    font-size: 59px;
+  }
+
+  .contenedor-list-platform{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
