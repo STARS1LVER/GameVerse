@@ -45,8 +45,8 @@ export class PlatformListGamesComponent implements OnInit {
    */
   public getListPlatformById(page: number) {
     this.isLoading = true;
-    this.gameVerseService
-      .getListGamesForPlatform(this.id, page)
+
+    this.gameVerseService.getListGamesForPlatform(this.id, page)
       .subscribe((respuesta) => {
         if (!respuesta) return this.route.navigate(['/gameverse/welcome-page']);
         setTimeout(() => {

@@ -1,1 +1,30 @@
-<p>genres-list-games-component works!</p>
+<main>
+
+  <h2 class="title-game text-shadow-pop-bottom" > {{nameGenres}} GAMES </h2>
+
+
+
+  <div class="content-spinner" *ngIf="isLoading">
+    <spinner-game></spinner-game>
+  </div>
+
+
+
+  <section class="content-cards" *ngIf="!isLoading">
+
+    <div *ngFor="let genres of listGamesForGenres">
+      <card-game [gameList]="genres" ></card-game>
+    </div>
+
+  </section>
+
+
+
+  <paginator-game (pageChange)="getPageByEmitEvent($event)" [ngClass]="{'ocultar': isLoading}" ></paginator-game>
+
+
+
+
+
+
+</main>

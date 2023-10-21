@@ -91,6 +91,18 @@ export class GameVerveService {
     )
   }
 
+  /**
+   *
+   * @param id
+   * @returns
+   */
+  public getListGamesGenresForById( id: number, page: number ): Observable<ResultListPlatform[]>  {
+    return this.httpClient.get<PlatformList>(`${this.baseUrl}games?genres=${id}&key=${this.apiKey}&page=${page}&page_size=12`)
+    .pipe(
+      map( respuesta => respuesta.results )
+    )
+  }
+
 
 
 
