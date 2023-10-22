@@ -24,7 +24,7 @@ export class CardExtraComponent implements OnInit {
 
   ngOnInit(): void {
     if(!this.platformList) throw new Error('Property PlatformList is required');
-    console.log( this.opcionView )
+    // console.log( this.opcionView )
   }
 
 

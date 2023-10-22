@@ -92,9 +92,10 @@ export class GameVerveService {
   }
 
   /**
-   *
-   * @param id
-   * @returns
+   * Este metodo nos permite obtener la lista de juegos dependiendo el genero donde estemos
+   * @param id number
+   * @param page number
+   * @returns observable que emite un arreglo de tipo ResultListPlatform
    */
   public getListGamesGenresForById( id: number, page: number ): Observable<ResultListPlatform[]>  {
     return this.httpClient.get<PlatformList>(`${this.baseUrl}games?genres=${id}&key=${this.apiKey}&page=${page}&page_size=12`)
@@ -103,8 +104,17 @@ export class GameVerveService {
     )
   }
 
-
-
+  /**
+   * Este metodo nos permite buscar juegos por medio del nombre que le pasemos
+   * @param name string
+   * @returns un observable que emite un arreglo de tipo Result
+   */
+  public getListGamesBySearch( name:string ): Observable<Result[]> {
+    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?search=${name}&key=${this.apiKey}&page=1&page_size=12`)
+    .pipe(
+      map( respuesta => respuesta.results )
+    )
+  }
 
 
 

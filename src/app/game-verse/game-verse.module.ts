@@ -27,6 +27,7 @@ import { SpinnerGameComponent } from './components/spinner-game/spinner-game.com
 import { DescriptionPipe } from './pipes/description.pipe';
 import { CardExtraComponent } from './components/card-extra/card-extra.component';
 import { TitleGamePipe } from './pipes/title-game.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -53,7 +54,8 @@ import { TitleGamePipe } from './pipes/title-game.pipe';
   imports: [
     CommonModule,
     GameVerseRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ]
 })
 export class GameVerseModule { }

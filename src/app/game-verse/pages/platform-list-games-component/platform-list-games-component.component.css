@@ -23,6 +23,7 @@ main{
 
   .title-game{
     font-size: 59px;
+    text-align: center;
   }
 
   .contenedor-list-platform{
