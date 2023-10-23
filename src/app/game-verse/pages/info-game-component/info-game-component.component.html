@@ -5,8 +5,14 @@
 </div>
 
 
-  <section  class="section-info"  *ngIf="game && !isLoading" [ngStyle]="{
-    'background-image': 'linear-gradient(0deg, rgba(0,0,0,1) 13%, rgba(0,191,35,0) 100%), url(' + game.background_image_additional + ')'
+<div class="content-spinner" *ngIf="errorApi">
+
+  <h1>No se encontro informacion acerca de este juego.</h1>
+
+</div>
+
+<section  class="section-info"  *ngIf="game && !isLoading" [ngStyle]="{
+    'background-image': 'linear-gradient(0deg, rgba(0,0,0,1) 13%, rgba(0,191,35,0) 100%), url(' + (game.background_image_additional | imageGame ) + ')'
   }">
 
     <div class="contendor-info"  >
@@ -14,7 +20,7 @@
       <div class="contenedor-back">
         <h2 class="title-game title-2 text-shadow-pop-bottom "> {{ game.name | titleGame }} </h2>
         <div class="content-info-img " ngOptimizedImage>
-          <img class="" [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
+          <img class="" [src]="game.background_image | imageGame " fetchPriority="high" height="100%" width="100%" alt="">
         </div>
 
         <div class="cont-genres">
@@ -55,7 +61,7 @@
       <div class="cont-text">
         <h2 class="title-game text-shadow-pop-bottom " [title]="game.name"> {{game.name | titleGame }} </h2>
         <div class="content-info-img-responsive " ngOptimizedImage>
-          <img class="" [src]="game.background_image" fetchPriority="high" height="100%" width="100%" alt="">
+          <img class="" [src]="game.background_image |imageGame " fetchPriority="high" height="100%" width="100%" alt="">
         </div>
         <h6> <span class="titles">Rating:</span>  {{game.rating}} <i class="fa-solid fa-star fa-xs" style="color:#00bf23 ;"></i> </h6>
         <h6> <span class="titles">Released:</span>  {{game.released}} <i class="fa-regular fa-calendar fa-xs" style="color: #00bf23;"></i> </h6>

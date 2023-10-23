@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environments } from 'src/app/environments/environments';
 import { GameVerse, Result } from '../interfaces/list-games.interface';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { GameInfo } from '../interfaces/game-info.interface';
 import { Platform, ResultPlatform } from '../interfaces/platform.interface';
 import { PlatformList, ResultListPlatform } from '../interfaces/platform-list-games.interface';
@@ -40,8 +40,18 @@ export class GameVerveService {
    * @param id tipo number
    * @returns retorna un Observable<Emite GameInfo >
    */
-  public getInfoGameById( id: number ): Observable<GameInfo> {
+  public getInfoGameById( id: number ): Observable<GameInfo | undefined >  {
     return this.httpClient.get<GameInfo>(`${this.baseUrl}games/${id}?key=${this.apiKey}`)
+    .pipe(
+      catchError( (error) => {
+        if( error.status === 404){
+          console.log('recurso no encontrado');
+          return of (undefined);
+        } else {
+          return of (undefined)
+        }
+      })
+    )
   }
 
   /**
@@ -109,8 +119,8 @@ export class GameVerveService {
    * @param name string
    * @returns un observable que emite un arreglo de tipo Result
    */
-  public getListGamesBySearch( name:string ): Observable<Result[]> {
-    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?search=${name}&key=${this.apiKey}&page=1&page_size=12`)
+  public getListGamesBySearch( name:string, page: number ): Observable<Result[]> {
+    return this.httpClient.get<GameVerse>(`${this.baseUrl}games?search=${name}&key=${this.apiKey}&page=${page}&page_size=12`)
     .pipe(
       map( respuesta => respuesta.results )
     )

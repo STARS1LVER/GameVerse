@@ -11,6 +11,7 @@ import { GenresPageComponent } from './pages/genres-page-component/genres-page-c
 import { PlatformPageComponent } from './pages/platform-page-component/platform-page-component.component';
 import { PlatformListGamesComponent } from './pages/platform-list-games-component/platform-list-games-component.component';
 import { GenresListGamesComponent } from './pages/genres-list-games-component/genres-list-games-component.component';
+import { InfoErrorGameComponentComponent } from './pages/info-error-game-component/info-error-game-component.component';
 
 
 // Configuracion De Rutas
@@ -19,17 +20,18 @@ const routes: Routes = [
     path: '',
     component: LayoutPageComponent,
     children: [
-      { path: 'welcome-page',      component: WelcomePageComponent       },
-      { path: 'list-games',        component: ListGamePageComponent      },
-      { path: 'search-games',      component: SearchGameComponent        },
-      { path: 'next-games',        component: NextGamesPageComponent     },
-      { path: 'top-games',         component: TopGamesComponent          },
-      { path: 'genres-games',      component: GenresPageComponent        },
-      { path: 'platform-games',    component: PlatformPageComponent      },
-      { path: 'info-game/:id',     component: InfoGameComponent          },
-      { path: 'platform-list/:name/:id', component: PlatformListGamesComponent },
-      { path: 'genres-list/:name/:id',   component: GenresListGamesComponent   },
-      { path: '**',                redirectTo: 'welcome-page'            },
+      { path: 'welcome-page',      component: WelcomePageComponent                 },
+      { path: 'list-games',        component: ListGamePageComponent                },
+      { path: 'search-games',      component: SearchGameComponent                  },
+      { path: 'next-games',        component: NextGamesPageComponent               },
+      { path: 'top-games',         component: TopGamesComponent                    },
+      { path: 'genres-games',      component: GenresPageComponent                  },
+      { path: 'platform-games',    component: PlatformPageComponent                },
+      { path: 'info-error',        component: InfoErrorGameComponentComponent      },
+      { path: 'info-game/:id',     component: InfoGameComponent                    },
+      { path: 'platform-list/:name/:id', component: PlatformListGamesComponent     },
+      { path: 'genres-list/:name/:id',   component: GenresListGamesComponent       },
+      { path: '**',                redirectTo: 'welcome-page'                      },
     ]
   }
 ]

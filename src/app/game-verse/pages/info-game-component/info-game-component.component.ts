@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameInfo } from '../../interfaces/game-info.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameVerveService } from '../../services/game-serve.service';
-import { switchMap } from 'rxjs';
+import { delay, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-info-game-component',
@@ -12,8 +12,8 @@ import { switchMap } from 'rxjs';
 export class InfoGameComponent implements OnInit {
 
   // Propiedades:
-  public game!: GameInfo;
-
+  public game?: GameInfo;
+  public errorApi: boolean = false;
   public isLoading: boolean = false;
 
   // Inyectamos en el constructor
@@ -30,12 +30,13 @@ export class InfoGameComponent implements OnInit {
   //  Usamos el pipe y accedemos al operador de rxjs y usamos al swicthmap
   // Para acceder al id que trae la ruta
    .pipe(
+    delay(1000),
     switchMap(({ id }) => this.gameVerseServicio.getInfoGameById(id))
    )
    .subscribe({
       next: (respuesta) =>{
         // Si no existe el id llevame a la pagina principal
-        if( !respuesta ) return this.route.navigate(['/gameverse/welcome-page'])
+        if( !respuesta ) return this.route.navigate(['/gameverse/info-error'])
 
         this.isLoading = true;
         setTimeout(() =>{
@@ -47,6 +48,7 @@ export class InfoGameComponent implements OnInit {
     },
     error: (error) => {
       console.log('hay un error en la api')
+      this.errorApi = true;
       console.log(`${error.status}`)
     }
    })

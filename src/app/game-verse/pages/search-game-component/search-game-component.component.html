@@ -9,9 +9,16 @@
   </form>
 
 
-  <section class="content-cards">
+  <section class="content-cards content-search">
 
-    <div *ngFor="let games of gamesBySearch">
+
+    <div *ngIf="notSearch">
+      <game-not-found></game-not-found>
+    </div>
+
+
+
+    <div *ngFor="let games of gamesBySearch" [ngClass]="{'ocultar': notSearch}"  >
       <card-game [gameList]="games" ></card-game>
     </div>
 
@@ -20,6 +27,7 @@
   </section>
 
 
+  <paginator-game></paginator-game>
 
 
 </main>

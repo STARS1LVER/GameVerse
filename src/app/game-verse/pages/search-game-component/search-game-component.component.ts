@@ -20,48 +20,40 @@ export class SearchGameComponent {
   public currentPage: number = 1;
   public isLoading: boolean = false;
   public errorsForm: boolean = false
+  public notSearch: boolean = false
+
 
 
   constructor(
     private formB: FormBuilder,
-    private gameVereService: GameVerveService
+    private gameVerseService: GameVerveService
   ){}
 
 
   public onSubmitForm(): void {
 
-    // console.log( this.myInputForm.value )
 
     if( this.myInputForm.invalid ){
       this.myInputForm.markAllAsTouched();
       console.log(this.myInputForm.controls['name'].errors);
       this.errorsForm = true;
+      this.notSearch = false;
       return
     };
 
     console.log(this.myInputForm.controls['name'].value)
 
-    this.gameVereService.getListGamesBySearch(this.myInputForm.controls['name'].value)
-    .subscribe({
-      next: (respuesta) => {
-          this.errorsForm = false;
-          this.gamesBySearch = respuesta
-          console.log(respuesta)
-      },
-      error: () => {
-        console.log('hay un error')
-      }
-    })
-
+    this.getGamesBySearch(this.myInputForm.controls['name'].value, this.currentPage)
 
 
   }
 
   /**
    *
-   * @returns 
+   * @returns
    */
   public getFielError(): string | null{
+
 
     const errors = this.myInputForm.controls['name'].errors || {};
 
@@ -81,6 +73,39 @@ export class SearchGameComponent {
 
   }
 
+
+  public getPageByEvent( page: number ){
+
+    this.currentPage = page;
+
+    if( this.currentPage <= 0 ) return
+
+    // this.gameVerseService.getListGamesBySearch(this.)
+
+
+
+  }
+
+
+  public getGamesBySearch( campo: string, page: number){
+    
+    this.gameVerseService.getListGamesBySearch(campo, page)
+    .subscribe({
+      next: (respuesta) => {
+          this.errorsForm = false;
+          if( respuesta.length === 0){
+            this.notSearch = true;
+          } else {
+            this.gamesBySearch = respuesta
+            this.notSearch = false;
+            console.log(respuesta)
+          }
+      },
+      error: () => {
+        console.log('hay un error')
+      }
+    })
+  }
 
 
 }

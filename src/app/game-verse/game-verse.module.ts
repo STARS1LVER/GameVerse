@@ -28,6 +28,9 @@ import { DescriptionPipe } from './pipes/description.pipe';
 import { CardExtraComponent } from './components/card-extra/card-extra.component';
 import { TitleGamePipe } from './pipes/title-game.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ImageGamePipe } from './pipes/image.pipe';
+import { InfoErrorGameComponentComponent } from './pages/info-error-game-component/info-error-game-component.component';
+import { GameNotFoundComponent } from './components/game-not-found/game-not-found.component';
 
 
 
@@ -49,7 +52,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     SpinnerGameComponent,
     DescriptionPipe,
     CardExtraComponent,
-    TitleGamePipe
+    TitleGamePipe,
+    ImageGamePipe,
+    InfoErrorGameComponentComponent,
+    GameNotFoundComponent
   ],
   imports: [
     CommonModule,
