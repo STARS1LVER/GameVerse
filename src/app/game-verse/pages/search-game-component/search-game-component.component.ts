@@ -16,7 +16,8 @@ export class SearchGameComponent {
 
   // Propiedades:
   public currentPage: number = 1;
-  
+  public isLoading: boolean = false;
+
 
   constructor(
     private formB: FormBuilder,
