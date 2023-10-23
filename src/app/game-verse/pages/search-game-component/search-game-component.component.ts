@@ -80,7 +80,7 @@ export class SearchGameComponent {
 
     if( this.currentPage <= 0 ) return
 
-    // this.gameVerseService.getListGamesBySearch(this.)
+    this.getGamesBySearch(this.myInputForm.controls['name'].value, this.currentPage)
 
 
 
@@ -88,7 +88,7 @@ export class SearchGameComponent {
 
 
   public getGamesBySearch( campo: string, page: number){
-    
+
     this.gameVerseService.getListGamesBySearch(campo, page)
     .subscribe({
       next: (respuesta) => {

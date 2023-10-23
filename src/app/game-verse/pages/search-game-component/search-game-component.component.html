@@ -27,7 +27,7 @@
   </section>
 
 
-  <paginator-game></paginator-game>
+  <paginator-game  [ngClass]="{'ocultar': notSearch}" (pageChange)="getPageByEvent($event)"  ></paginator-game>
 
 
 </main>
