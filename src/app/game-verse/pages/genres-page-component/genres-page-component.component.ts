@@ -37,7 +37,7 @@ export class GenresPageComponent implements OnInit {
         setTimeout(() => {
           this.listGenresOpcion = respuesta;
           this.isLoading = false
-        }, 1550);
+        }, 1500);
       },
       error: () => {
         console.log('Hay un error!');

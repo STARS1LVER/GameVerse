@@ -32,18 +32,23 @@ export class InfoGameComponent implements OnInit {
    .pipe(
     switchMap(({ id }) => this.gameVerseServicio.getInfoGameById(id))
    )
-   .subscribe((respuesta) => {
-     // Si no existe el id llevame a la pagina principal
-     if( !respuesta ) return this.route.navigate(['/gameverse/welcome-page'])
+   .subscribe({
+      next: (respuesta) =>{
+        // Si no existe el id llevame a la pagina principal
+        if( !respuesta ) return this.route.navigate(['/gameverse/welcome-page'])
 
-     this.isLoading = true;
-    setTimeout(() =>{
-      this.game = respuesta;
-      this.isLoading = false
-    },2500)
+        this.isLoading = true;
+        setTimeout(() =>{
+          this.game = respuesta;
+          this.isLoading = false
+        },1500)
 
-    return
-
+        return
+    },
+    error: (error) => {
+      console.log('hay un error en la api')
+      console.log(`${error.status}`)
+    }
    })
   }
 
