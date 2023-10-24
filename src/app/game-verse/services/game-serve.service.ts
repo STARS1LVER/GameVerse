@@ -119,11 +119,9 @@ export class GameVerveService {
    * @param name string
    * @returns un observable que emite un arreglo de tipo Result
    */
-  public getListGamesBySearch( name:string, page: number ): Observable<Result[]> {
+  public getListGamesBySearch( name:string, page: number ): Observable<GameVerse> {
     return this.httpClient.get<GameVerse>(`${this.baseUrl}games?search=${name}&key=${this.apiKey}&page=${page}&page_size=12`)
-    .pipe(
-      map( respuesta => respuesta.results )
-    )
+
   }
 
 

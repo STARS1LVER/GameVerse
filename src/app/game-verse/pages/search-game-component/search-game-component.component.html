@@ -8,8 +8,13 @@
     <span *ngIf="errorsForm" >  {{ getFielError() }}  </span>
   </form>
 
+  <div class="content-spinner" *ngIf="isLoading" >
+    <spinner-game></spinner-game>
+  </div>
 
   <section class="content-cards content-search">
+
+
 
 
     <div *ngIf="notSearch">
@@ -27,7 +32,7 @@
   </section>
 
 
-  <paginator-game  [ngClass]="{'ocultar': notSearch}" (pageChange)="getPageByEvent($event)"  ></paginator-game>
+  <paginator-game  [ngClass]="{'ocultar': notPaginator || nextPage }" (pageChange)="getPageByEvent($event)"  ></paginator-game>
 
 
 </main>
