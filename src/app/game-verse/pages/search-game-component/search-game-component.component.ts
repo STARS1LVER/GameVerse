@@ -23,21 +23,31 @@ export class SearchGameComponent {
   public notPaginator: boolean = true;
   public nextPage: boolean = false;
 
+  // Inyectamos en el constructor
   constructor(
     private formB: FormBuilder,
     private gameVerseService: GameVerveService
   ) {}
 
+  /**
+   * este metodo nos permite validar y si esta correcto
+   * manda ese valor al metodo que obtiene los games
+   * @returns void
+   */
   public onSubmitForm(): void {
     if (this.myInputForm.invalid) {
+      // si esta invalido toca todo (errores)
       this.myInputForm.markAllAsTouched();
       console.log(this.myInputForm.controls['name'].errors);
+      // Que se muestren los errores
       this.errorsForm = true;
       this.notSearch = false;
       return;
     }
 
     console.log(this.myInputForm.controls['name'].value);
+
+    this.currentPage = 1;
 
     this.getGamesBySearch(
       this.myInputForm.controls['name'].value,
@@ -65,14 +75,12 @@ export class SearchGameComponent {
   }
 
   public getPageByEvent(page: number) {
+
     this.currentPage = page;
 
-    if (this.currentPage <= 0) return;
+    if ( this.currentPage <= 0 ) return;
 
-    this.getGamesBySearch(
-      this.myInputForm.controls['name'].value,
-      this.currentPage
-    );
+    this.getGamesBySearch( this.myInputForm.controls['name'].value,this.currentPage );
   }
 
   public getGamesBySearch(campo: string, page: number) {
@@ -87,11 +95,10 @@ export class SearchGameComponent {
             this.isLoading = false;
           } else {
             this.notPaginator = false;
-            this.isLoading = false;
             this.notSearch = false;
-            this.gamesBySearch = respuesta.results;
+            this.isLoading = false;
             respuesta.next === null ? this.nextPage = true : this.nextPage = false;
-
+            this.gamesBySearch = respuesta.results;
           }
         }, 1500);
       },

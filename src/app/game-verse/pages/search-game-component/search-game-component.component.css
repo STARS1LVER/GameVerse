@@ -12,12 +12,14 @@ main{
 }
 
 
-.thisExists{
-  display: none;
+
+.content-spinner-s{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
 }
-
-
-
 
 
 

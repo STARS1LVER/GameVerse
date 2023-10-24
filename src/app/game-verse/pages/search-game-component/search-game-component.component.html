@@ -8,13 +8,11 @@
     <span *ngIf="errorsForm" >  {{ getFielError() }}  </span>
   </form>
 
-  <div class="content-spinner" *ngIf="isLoading" >
+  <div class="content-spinner-s" *ngIf="isLoading" >
     <spinner-game></spinner-game>
   </div>
 
-  <section class="content-cards content-search">
-
-
+  <section class="content-cards content-search" *ngIf="!isLoading">
 
 
     <div *ngIf="notSearch">
@@ -23,7 +21,7 @@
 
 
 
-    <div *ngFor="let games of gamesBySearch" [ngClass]="{'ocultar': notSearch}"  >
+    <div *ngFor="let games of gamesBySearch"  >
       <card-game [gameList]="games" ></card-game>
     </div>
 
