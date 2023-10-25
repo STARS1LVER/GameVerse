@@ -20,7 +20,7 @@
       <div class="contenedor-back">
         <h2 class="title-game title-2 text-shadow-pop-bottom "> {{ game.name | titleGame }} </h2>
         <div class="content-info-img " ngOptimizedImage>
-          <img class="" [ngSrc]="game.background_image | imageGame " fetchPriority="high" height="300" width="600" alt="">
+          <img class="" [src]="game.background_image | imageGame " fetchPriority="high"  alt="">
         </div>
 
         <div class="cont-genres">

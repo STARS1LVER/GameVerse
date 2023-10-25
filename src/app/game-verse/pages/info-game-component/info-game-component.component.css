@@ -281,6 +281,8 @@ i{
   }
 
   .content-info-img-responsive img {
+    height: 100%;
+    width: 100%;
     border-radius: 6px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
