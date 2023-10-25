@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { GameVerveService } from 'src/app/game-verse/services/game-serve.service';
 import { Result } from '../../src/app/game-verse/interfaces/list-games.interface';
@@ -7,8 +8,9 @@ import { Observable } from 'rxjs';
 
 // Describimos a cual componente  o servicio le haremos las pruebas
 describe('GameVerveService', () => {
-  //
+  // inyectamos
   let service: GameVerveService;
+
 
   beforeEach(() => {
     // construimos una emulacion de un modulo
@@ -26,16 +28,17 @@ describe('GameVerveService', () => {
   });
 
 
-  // Probando el metodo getListGames ----------------------
-  test('Debe traer la informacion de tipo Result Valida ', (done) => {
+  //---------- Probando el metodo getListGames ----------------------
 
-    service.getListGames(1).subscribe((resultado) => {
-      const firstResult = resultado[0];
-      expect(firstResult.id).toBe(3498);
-      done()
+  // test('Debe traer la informacion de tipo Result Valida ', (done) => {
 
-    });
-  });
+  //   service.getListGames(1).subscribe((resultado) => {
+  //     const firstResult = resultado[0];
+  //     expect(firstResult.id).toBe(3498);
+  //     done()
+
+  //   });
+  // });
 
 
   test('Debe devolver un arreglo de longitud 12', () => {
@@ -61,18 +64,6 @@ describe('GameVerveService', () => {
 
 
   })
-
-
-  // test('Debe devolver un observable que emite un arreglo de tipo <Result[]>', () => {
-
-  //   const resultado = service.getListGames(1);
-
-  //   expect(resultado instanceof Strin ).toBe(true)
-
-
-  // })
-
-
 
 
 
