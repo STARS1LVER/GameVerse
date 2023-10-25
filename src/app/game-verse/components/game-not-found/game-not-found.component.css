@@ -1,0 +1,36 @@
+.card-p{
+  background-color: rgb(39, 40, 40);
+  color: rgb(255, 255, 255);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.li-not{
+  text-align: center;
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  border: 1px solid #00bf23;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+}
+
+
+
+.game-title{
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .card-p{
+    width: 300px;
+  }
+
+  .li-not{
+    font-size: 15px;
+    padding: 5px;
+  }
+
+}

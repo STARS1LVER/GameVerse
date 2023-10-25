@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
+
 // Componentes
 import { GenresListGamesComponent} from './pages/genres-list-games-component/genres-list-games-component.component';
 import { GenresPageComponent } from './pages/genres-page-component/genres-page-component.component';

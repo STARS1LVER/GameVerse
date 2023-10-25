@@ -12,13 +12,13 @@
     <spinner-game></spinner-game>
   </div>
 
-  <section class="content-cards content-search" *ngIf="!isLoading">
-
-
-    <div *ngIf="notSearch">
+  <div class="content-spinner-s" *ngIf="notSearch">
       <game-not-found></game-not-found>
-    </div>
+  </div>
 
+
+
+  <section class="content-cards content-search" *ngIf="!isLoading && !notSearch">
 
 
     <div *ngFor="let games of gamesBySearch"  >

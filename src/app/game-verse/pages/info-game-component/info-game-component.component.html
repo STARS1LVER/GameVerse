@@ -20,7 +20,7 @@
       <div class="contenedor-back">
         <h2 class="title-game title-2 text-shadow-pop-bottom "> {{ game.name | titleGame }} </h2>
         <div class="content-info-img " ngOptimizedImage>
-          <img class="" [src]="game.background_image | imageGame " fetchPriority="high" height="100%" width="100%" alt="">
+          <img class="" [ngSrc]="game.background_image | imageGame " fetchPriority="high" height="300" width="600" alt="">
         </div>
 
         <div class="cont-genres">
@@ -61,7 +61,7 @@
       <div class="cont-text">
         <h2 class="title-game text-shadow-pop-bottom " [title]="game.name"> {{game.name | titleGame }} </h2>
         <div class="content-info-img-responsive " ngOptimizedImage>
-          <img class="" [src]="game.background_image |imageGame " fetchPriority="high" height="100%" width="100%" alt="">
+          <img class="" [src]="game.background_image |imageGame "  loading="lazy" alt="">
         </div>
         <h6> <span class="titles">Rating:</span>  {{game.rating}} <i class="fa-solid fa-star fa-xs" style="color:#00bf23 ;"></i> </h6>
         <h6> <span class="titles">Released:</span>  {{game.released}} <i class="fa-regular fa-calendar fa-xs" style="color: #00bf23;"></i> </h6>

@@ -18,38 +18,8 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -122,3 +92,17 @@ main{
 /* ---------------------------------------------------------------------- */
 
 
+
+@media screen and (max-width: 600px) {
+
+  .input-group-p{
+    width: 300px;
+  }
+
+  .content-search{
+    /* border: 1px solid blue ; */
+    display: flex;
+    flex-direction: column;
+  }
+
+}

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchGameComponent } from './search-game-component.component';
 
-describe('SearchGameComponentComponent', () => {
+describe('SearchGameComponent', () => {
   let component: SearchGameComponent;
   let fixture: ComponentFixture<SearchGameComponent>;
 
