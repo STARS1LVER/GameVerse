@@ -16,7 +16,7 @@ describe('GameVerveService', () => {
     // construimos una emulacion de un modulo
     TestBed.configureTestingModule({
       // importamos dependencias de los metodos o importaciones
-      imports: [HttpClientModule],
+      imports: [HttpClientTestingModule],
     });
 
     // le inyectamos el GameVerveService
@@ -28,17 +28,6 @@ describe('GameVerveService', () => {
   });
 
 
-  //---------- Probando el metodo getListGames ----------------------
-
-  // test('Debe traer la informacion de tipo Result Valida ', (done) => {
-
-  //   service.getListGames(1).subscribe((resultado) => {
-  //     const firstResult = resultado[0];
-  //     expect(firstResult.id).toBe(3498);
-  //     done()
-
-  //   });
-  // });
 
 
   test('Debe devolver un arreglo de longitud 12', () => {
