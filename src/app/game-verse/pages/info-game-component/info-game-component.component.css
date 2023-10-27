@@ -63,6 +63,8 @@ color: rgb(255, 255, 255);
 }
 
 .content-info-img img {
+  height: 100%;
+  width: 100%;
   margin-top: 20px;
   object-fit: cover;
   border-radius: 6px;
