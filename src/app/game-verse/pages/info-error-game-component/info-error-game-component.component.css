@@ -17,14 +17,14 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red ;
+  /* border: 1px solid red ; */
 
 }
 
 
 .error-404{
   color: rgb(255, 255, 255);
-  border: 1px solid forestgreen;
+  /* border: 1px solid forestgreen; */
   width: 600px;
   height:500px;
   display: flex;
@@ -42,4 +42,14 @@ main{
 
 .title-404{
   font-size: 200px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+main{
+  width: auto;
+  background-size: contain;
+}
+
 }
