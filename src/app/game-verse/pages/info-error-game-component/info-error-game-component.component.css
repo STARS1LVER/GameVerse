@@ -47,9 +47,22 @@ main{
 
 @media screen and (max-width: 600px) {
 
+  /* fondo */
 main{
   width: auto;
   background-size: contain;
 }
+
+/* Titulos */
+
+.title-404{
+  font-size: 100px;
+}
+
+.error-404 span {
+  font-size: 40px;
+  text-align: center;
+}
+
 
 }
