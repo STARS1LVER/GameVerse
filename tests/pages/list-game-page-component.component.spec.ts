@@ -6,7 +6,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { GameVerveService } from 'src/app/game-verse/services/game-serve.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Result } from 'src/app/game-verse/interfaces/list-games.interface';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 let listGamesP: Result[] = [
   {
@@ -88,21 +88,41 @@ describe('ListGamePageComponent', () => {
     expect( component ).toBeTruthy()
   })
 
-  // Metodo getGames():
+  // Metodo getGames() -------------------------------------------------------:
   test('Comprobar si devuelve la suscripcion correctamente', (done) => {
 
+    // espiamos el metodo y mirar si se ah llamado correctamente
     let espia1 = jest.spyOn(service,'getListGames').mockReturnValueOnce( of(listGamesP) )
+    // Llamamos el metodo
     component.getGames(1);
     // comprobamos que se agrego correctamente
     expect( espia1 ).toHaveBeenCalled();
+    // Establecemos un setTimeOut para simular la respuesta
     setTimeout(() => {
+      // validamos que se hayan agregados los juegos
       expect( component.listGames.length ).toBeGreaterThan(0);
+      // verificamos que tengan los datos que esperamos
       expect( component.listGames ).toEqual(listGamesP)
       done()
     },1500)
 
+  })
+
+  test('Comprobar cuando hay un respectivo error en el metodo getGames()', () => {
+
+    const errorMock = new Error('Error simulado');
+
+    let espia1 = jest.spyOn(service, 'getListGames').mockReturnValueOnce( throwError(errorMock) )
+
+    component.getGames(1);
+
+    expect( espia1 ).toHaveBeenCalled();
+
+
 
   })
+
+
 
 
 });
