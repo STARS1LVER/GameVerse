@@ -11,7 +11,7 @@ export class ListGamePageComponent implements OnInit {
 
 
   // Propiedades:
-  public listGames!: Result[];
+  public listGames: Result[] = [];
   public currentpage: number = 1;
   // Propiedad para controlar el spinner
   public isloading: boolean = true;

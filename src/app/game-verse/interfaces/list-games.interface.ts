@@ -47,22 +47,22 @@ export interface Result {
   ratings_count:      number;
   reviews_text_count: number;
   added:              number;
-  added_by_status:    AddedByStatus;
+  added_by_status?:    AddedByStatus;
   metacritic:         number;
   playtime:           number;
   suggestions_count:  number;
   updated:            string;
   user_game:          null;
   reviews_count:      number;
-  saturated_color:    Color;
-  dominant_color:     Color;
+  saturated_color:    string;
+  dominant_color:     string;
   platforms:          PlatformElement[];
   parent_platforms:   ParentPlatform[];
   genres:             Genre[];
   stores:             Store[];
   clip:               null;
   tags:               Genre[];
-  esrb_rating:        EsrbRating;
+  esrb_rating?:        EsrbRating;
   short_screenshots:  ShortScreenshot[];
 }
 
