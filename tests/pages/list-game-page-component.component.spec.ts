@@ -82,6 +82,13 @@ describe('ListGamePageComponent', () => {
     service = fixture.debugElement.injector.get(GameVerveService);
   })
 
+  // el after se ejecuta despues de cada test
+  afterEach( () => {
+
+    fixture.destroy() // detruimos el fixture para que se renueve en cada test
+    jest.resetAllMocks() // reseteamos los mock de cada test
+  })
+
 
   test('Se ah Creado el componente ListGamesPageComponent correctamente', () => {
     // comprobamos si se creo correctamente
@@ -132,17 +139,16 @@ describe('ListGamePageComponent', () => {
     // le asinamos a la variable current page el valor de 1
     component.currentpage = 1;
 
-    
+    // Hacemos un espia pero no simulamos su resultado no necesitamos que se ejecute
     const espia1 = jest.spyOn(component, 'getGames');
 
+    // llamamos al metodo
     component.onPageChanged(currentPage);
 
+    // verificamos que la pagina no se actualizado
     expect( component.currentpage ).toEqual( currentPage );
+    // Verifica que el espia no se haya llamado
     expect( espia1 ).not.toHaveBeenCalled()
-
-
-
-
 
 
   })
