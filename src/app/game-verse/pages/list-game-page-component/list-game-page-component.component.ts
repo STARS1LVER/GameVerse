@@ -8,8 +8,6 @@ import { GameVerveService } from '../../services/game-serve.service';
   styleUrls: ['./list-game-page-component.component.css'],
 })
 export class ListGamePageComponent implements OnInit {
-
-
   // Propiedades:
   public listGames: Result[] = [];
   public currentpage: number = 1;
@@ -21,7 +19,7 @@ export class ListGamePageComponent implements OnInit {
 
   ngOnInit(): void {
     // Llamamos al metodo
-    this.onPageChanged( this.currentpage );
+    this.onPageChanged(this.currentpage);
   }
 
   /**
@@ -32,14 +30,14 @@ export class ListGamePageComponent implements OnInit {
   public getGames(page: number): void {
     this.isloading = true;
 
-    this.gameVerseServicio.getListGames( page ).subscribe({
-      next: ( respuesta ) => {
+    this.gameVerseServicio.getListGames(page).subscribe({
+      next: (respuesta) => {
         setTimeout(() => {
           this.listGames = respuesta;
           this.isloading = false;
         }, 1500);
       },
-      error: ( err ) => {
+      error: (err) => {
         console.log(`Hay un error: ${err}`);
       },
     });
@@ -51,15 +49,11 @@ export class ListGamePageComponent implements OnInit {
    * @param page tipo number
    * @returns void
    */
-  public onPageChanged( page: number ) {
-
+  public onPageChanged(page: number) {
     this.currentpage = page;
-
-    // console.log( "el emit",page );
-    // console.log( "desde list",this.currentpage );
 
     if (this.currentpage <= 0) return;
 
-    this.getGames( this.currentpage );
+    this.getGames(this.currentpage);
   }
 }

@@ -110,17 +110,44 @@ describe('ListGamePageComponent', () => {
 
   test('Comprobar cuando hay un respectivo error en el metodo getGames()', () => {
 
-    const errorMock = new Error('Error simulado');
+    // creamos la variable del mensaje
+    const errorMock = ('Error simulado');
 
+    // espiamos el metodo y en el retorno simulamos que dio un error
     let espia1 = jest.spyOn(service, 'getListGames').mockReturnValueOnce( throwError(errorMock) )
 
+    // Llamamos al metedo
     component.getGames(1);
 
+    // Y verificamos si al menos una vez se llamo
     expect( espia1 ).toHaveBeenCalled();
+
+  })
+  // ----------------------------------------------------------------------------------------------------
+
+  test('onPageChanged() no deberia hacer nada si la pagina es menor o igual a 0 ', () => {
+
+    // Creamos la variable que simula
+    const currentPage: number = 0;
+    // le asinamos a la variable current page el valor de 1
+    component.currentpage = 1;
+
+    
+    const espia1 = jest.spyOn(component, 'getGames');
+
+    component.onPageChanged(currentPage);
+
+    expect( component.currentpage ).toEqual( currentPage );
+    expect( espia1 ).not.toHaveBeenCalled()
+
+
+
 
 
 
   })
+
+
 
 
 
