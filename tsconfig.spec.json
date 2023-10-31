@@ -5,7 +5,9 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jest"
-    ]
+    ],
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
     "src/**/*.spec.ts",
