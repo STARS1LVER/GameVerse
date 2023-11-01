@@ -29,6 +29,7 @@ describe('DescriptionPipe', () => {
 
 
   test('Verificando que si el texto no supera el limite no haga nada', () => {
+    
     const textoPrueba = 'El clima está cambiando. La Tierra se calienta debido a gases de efecto invernadero. Fenómenos extremos, sequías, inundaciones, amenazan ecosistemas. Necesitamos actuar.'
 
     const resultadoTexto = pipeDescription.transform(textoPrueba);

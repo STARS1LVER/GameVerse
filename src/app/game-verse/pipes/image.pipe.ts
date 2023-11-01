@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ImageGamePipe implements PipeTransform {
   transform( image: string ): any {
 
-    if( image === null || !image ){
+    if( image === '' || !image ){
       return 'assets/image/not-image.png'
     }
 
