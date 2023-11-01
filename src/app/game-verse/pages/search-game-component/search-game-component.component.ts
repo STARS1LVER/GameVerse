@@ -132,6 +132,7 @@ export class SearchGameComponent {
             // Hacemos un operador ternario para controlar el valor del nextPage, para
             // ocultar el paginator si el nextPage es nulo
             respuesta.next === null ? this.nextPage = true : this.nextPage = false;
+            
             this.gamesBySearch = respuesta.results;
           }
         }, 1500);

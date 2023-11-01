@@ -95,6 +95,8 @@ describe('ListGamePageComponent', () => {
     expect( component ).toBeTruthy()
   })
 
+
+
   // Metodo getGames() -------------------------------------------------------:
   test('Comprobar si devuelve la suscripcion correctamente', (done) => {
 
