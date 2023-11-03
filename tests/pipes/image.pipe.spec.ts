@@ -1,3 +1,4 @@
+import { SafeSubscriber } from "rxjs/internal/Subscriber";
 import { ImageGamePipe } from "src/app/game-verse/pipes/image.pipe"
 
 describe('ImageGamePipe', () => {
@@ -31,7 +32,7 @@ describe('ImageGamePipe', () => {
 
 
   })
-
+  
   test('si la imagen viene bien que siga todo igual', () => {
 
     const imagen = 'www.imagendelaapi.com';
