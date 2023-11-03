@@ -32,6 +32,17 @@ describe('ImageGamePipe', () => {
 
   })
 
+  test('si la imagen viene bien que siga todo igual', () => {
+
+    const imagen = 'www.imagendelaapi.com';
+
+    const resultadoImagenFinal = pipeImage.transform(imagen);
+
+    expect( resultadoImagenFinal ).toBe(imagen)
+
+
+  })
+
 
 
 
