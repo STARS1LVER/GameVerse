@@ -108,6 +108,27 @@ describe('TopGamesComponent', () => {
 
   })
 
+  test('getPerPageTopGames(currentPage) no deberia hacer nada si la pagina es menor o igual a 0 ', () => {
+
+    // Creamos la variable que simula
+    const currentPage: number = 0;
+    // le asinamos a la variable current page el valor de 1
+    componentTop.currentPage = 1;
+
+    // Hacemos un espia pero no simulamos su resultado no necesitamos que se ejecute
+    const espia1 = jest.spyOn(componentTop, 'topGamesList');
+
+    // llamamos al metodo
+    componentTop.getPerPageTopGames(currentPage)
+
+    // verificamos que la pagina no se actualizado
+    expect( componentTop.currentPage ).toEqual( currentPage );
+    // Verifica que el espia no se haya llamado
+    expect( espia1 ).not.toHaveBeenCalled()
+
+
+  })
+
 
 
 })
