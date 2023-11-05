@@ -12,7 +12,7 @@ export interface ResultListPlatform {
   playtime:           number;
   platforms:          Platform[];
   stores:             Store[];
-  released:           Date;
+  released:           string;
   tba:                boolean;
   background_image:   string;
   rating:             number;
@@ -21,7 +21,7 @@ export interface ResultListPlatform {
   ratings_count:      number;
   reviews_text_count: number;
   added:              number;
-  added_by_status:    AddedByStatus;
+  added_by_status?:    AddedByStatus;
   metacritic:         number;
   suggestions_count:  number;
   updated:            string;
@@ -29,11 +29,11 @@ export interface ResultListPlatform {
   score:              null;
   clip:               null;
   tags:               Tag[];
-  esrb_rating:        EsrbRating;
+  esrb_rating?:        EsrbRating;
   user_game:          null;
   reviews_count:      number;
-  saturated_color:    Color;
-  dominant_color:     Color;
+  saturated_color?:    Color;
+  dominant_color?:     Color;
   short_screenshots:  ShortScreenshot[];
   parent_platforms:   Platform[];
   genres:             Genre[];

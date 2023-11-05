@@ -15,9 +15,8 @@ export interface GameInfo {
   rating:                      number;
   rating_top:                  number;
   ratings:                     Rating[];
-  reactions:                   Reactions;
   added:                       number;
-  added_by_status:             AddedByStatus;
+  added_by_status?:             AddedByStatus;
   playtime:                    number;
   screenshots_count:           number;
   movies_count:                number;
@@ -45,7 +44,7 @@ export interface GameInfo {
   dominant_color:              string;
   parent_platforms:            ParentPlatform[];
   platforms:                   PlatformElement[];
-  requirements:                Requirements;
+  requirements:                [];
   stores:                      Store[];
   developers:                  Developer[];
   genres:                      Developer[];
