@@ -7,6 +7,7 @@ import { TestBed } from '@angular/core/testing';
 import { catchError } from 'rxjs';
 import { environments } from 'src/app/environments/environments';
 import { GameInfo } from 'src/app/game-verse/interfaces/game-info.interface';
+import { ResultGenres } from 'src/app/game-verse/interfaces/genres.interface';
 import { Result } from 'src/app/game-verse/interfaces/list-games.interface';
 import { ResultListPlatform } from 'src/app/game-verse/interfaces/platform-list-games.interface';
 import { ResultPlatform } from 'src/app/game-verse/interfaces/platform.interface';
@@ -145,6 +146,17 @@ let resultadoPlatform: ResultPlatform [] = [
   }
 ]
 
+let resultGenres: ResultGenres[] = [
+  {
+    id:               0,
+    name:             '',
+    slug:             '',
+    games_count:      0,
+    image_background: '',
+    games:            [],
+  }
+]
+
 
 describe('GameVerveService', () => {
   // - Hacemos la referencia al servicio:
@@ -259,6 +271,9 @@ describe('GameVerveService', () => {
     // - Verificamos que la solicitud se haga correctamente
     const resquest = httpMock.expectOne(`${ environments.baseUrl }games?dates=2022-01-01,2024-04-01&ordering=-added&key=${environments.apiKey}&page=1&page_size=12`)
 
+     // - Validamos que la peticion sea GET
+     expect( resquest.request.method ).toBe('GET');
+
     //  - Simulamos la respuesta que esperamos
     resquest.flush(listTopGames)
 
@@ -276,11 +291,43 @@ describe('GameVerveService', () => {
     // - Hacemos la solicitud correctamente
     const resquest = httpMock.expectOne(`${environments.baseUrl}platforms?key=${environments.apiKey}`);
 
+     // - Validamos que la peticion sea GET
+     expect( resquest.request.method ).toBe('GET');
+
     // - simulamos la respuesta que esperamos
     resquest.flush(resultadoPlatform)
   })
 
-  
+
+  test('Ahora probaremos el siguiente metodo getListGamesForPlatform y que se haga la petricion correctamente ', () => {
+
+    service.getListGamesForPlatform(2,1).subscribe((respuesta: ResultListPlatform[] ) => {
+      // - Validamos que llegue lo que esperamos
+      expect(respuesta).toEqual(resultadoListGamesPlatform);
+    })
+
+    const resquest = httpMock.expectOne(`${environments.baseUrl}games?platforms=2&key=${environments.apiKey}&page=1&page_size=12`)
+
+    expect( resquest.request.method ).toBe('GET');
+
+    resquest.flush( resultadoListGamesPlatform )
+
+  })
+
+  test('Probaremos el metodo  getListGenres() que llegue lo que esperamos y que se haga la peticion correctamente', () => {
+
+    service.getListGenres().subscribe((respuesta: ResultGenres[] ) => {
+
+      expect(respuesta).toEqual(resultGenres);
+    })
+
+    const resquest = httpMock.expectOne(`${environments.baseUrl}genres?key=${environments.apiKey}`)
+
+    expect( resquest.request.method ).toBe('GET')
+
+    resquest.flush( resultGenres );
+
+  })
 
 
 
