@@ -8,7 +8,7 @@ import { catchError } from 'rxjs';
 import { environments } from 'src/app/environments/environments';
 import { GameInfo } from 'src/app/game-verse/interfaces/game-info.interface';
 import { ResultGenres } from 'src/app/game-verse/interfaces/genres.interface';
-import { Result } from 'src/app/game-verse/interfaces/list-games.interface';
+import { GameVerse, Result } from 'src/app/game-verse/interfaces/list-games.interface';
 import { ResultListPlatform } from 'src/app/game-verse/interfaces/platform-list-games.interface';
 import { ResultPlatform } from 'src/app/game-verse/interfaces/platform.interface';
 import { GameVerveService } from 'src/app/game-verse/services/game-serve.service';
@@ -156,6 +156,21 @@ let resultGenres: ResultGenres[] = [
     games:            [],
   }
 ]
+
+let resultGameVerse: GameVerse = {
+  count:                0,
+  next:                 '',
+  previous:             null,
+  results:              [],
+  seo_title:            '',
+  seo_description:      '',
+  seo_keywords:         '',
+  seo_h1:               '',
+  noindex:              true,
+  nofollow:             true,
+  description:          '',
+  nofollow_collections: []
+}
 
 
 describe('GameVerveService', () => {
@@ -326,6 +341,36 @@ describe('GameVerveService', () => {
     expect( resquest.request.method ).toBe('GET')
 
     resquest.flush( resultGenres );
+
+  })
+
+  test('Probaremos el metodo getListGamesGenresForById()  y validar y que se haga la peticion correctamente', () => {
+
+    service.getListGamesGenresForById(2,1).subscribe(( respuesta: ResultListPlatform[] ) => {
+      expect(respuesta).toEqual(resultadoListGamesPlatform)
+    })
+
+    const resquest = httpMock.expectOne(`${environments.baseUrl}games?genres=2&key=${environments.apiKey}&page=1&page_size=12`)
+
+    expect( resquest.request.method ).toBe('GET')
+
+    resquest.flush( resultadoListGamesPlatform )
+
+  })
+
+  test('Ahora probamos el metodo getListGamesBySearch() y Validamos que se haga la peticion correctamente', () => {
+
+    service.getListGamesBySearch('gta',1).subscribe(( respuesta: GameVerse ) => {
+
+      expect(respuesta).toEqual(resultGameVerse);
+
+    })
+
+    const resquest = httpMock.expectOne(`${environments.baseUrl}games?search=gta&key=${environments.apiKey}&page=1&page_size=12`)
+
+    expect( resquest.request.method  ).toBe('GET')
+
+    resquest.flush( resultGameVerse )
 
   })
 

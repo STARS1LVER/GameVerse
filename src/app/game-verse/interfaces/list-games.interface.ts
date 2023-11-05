@@ -10,7 +10,7 @@ export interface GameVerse {
   noindex:              boolean;
   nofollow:             boolean;
   description:          string;
-  filters:              Filters;
+  filters?:              Filters;
   nofollow_collections: string[];
 }
 
