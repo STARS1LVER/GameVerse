@@ -12,7 +12,7 @@ import { delay, switchMap } from 'rxjs';
 export class InfoGameComponent implements OnInit {
 
   // Propiedades:
-  public game?: GameInfo;
+  public game!: GameInfo;
   public errorApi: boolean = false;
   public isLoading: boolean = false;
 
