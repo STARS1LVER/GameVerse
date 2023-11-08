@@ -115,14 +115,14 @@ describe('InfoGameComponent', () => {
         expect( componenteInfoGame ).toBeTruthy();
   })
 
-
+  // ! Usamos el fakeAsync para simular el paso del tiempo
   test('Obtenemos los parametros de las rutas para obtener la infromacion del juego' ,fakeAsync(() =>{
 
     jest.spyOn(service, 'getInfoGameById').mockReturnValue( of( gameInfo ) )
 
     componenteInfoGame.ngOnInit();
 
-    tick(2500)
+    tick(2500) // - le indicamos que simule
 
     expect(componenteInfoGame.game).toEqual( gameInfo )
 
@@ -131,9 +131,67 @@ describe('InfoGameComponent', () => {
 
 
 
-  test('Validando que el nombre del icono se retorne correctamente', () => {
+  // test('Validando que el nombre del icono pc se retorne correctamente', () => {
 
-  })
+  //   const icono: string = 'pc'
+
+  //   const espia1 = jest.spyOn(componenteInfoGame, 'showIconForNames')
+
+  //   let resultado = componenteInfoGame.showIconForNames(icono);
+
+  //   expect(resultado).toBe('fa-brands fa-steam');
+
+  //   expect( espia1 ).toHaveBeenCalled()
+
+
+  // })
+
+  // test('Validando que el nombre del icono playstation5 se retorne correctamente', () => {
+
+  //   const icono: string = 'playstation5'
+
+  //   const espia1 = jest.spyOn(componenteInfoGame, 'showIconForNames')
+
+  //   let resultado = componenteInfoGame.showIconForNames(icono);
+
+  //   expect(resultado).toBe('fa-brands fa-playstation');
+
+  //   expect( espia1 ).toHaveBeenCalled()
+
+
+  // })
+
+
+  // test('Validando que el nombre del icono xbox-one se retorne correctamente', () => {
+
+  //   const icono: string = 'xbox-one'
+
+  //   const espia1 = jest.spyOn(componenteInfoGame, 'showIconForNames')
+
+  //   let resultado = componenteInfoGame.showIconForNames(icono);
+
+  //   expect(resultado).toBe('fa-brands fa-xbox');
+
+  //   expect( espia1 ).toHaveBeenCalled()
+
+
+  // })
+
+
+  function testShowIconForName(iconName: string, expectedClass: string) {
+    test(`Validando que el nombre del icono ${iconName} se retorne correctamente`, () => {
+      const espia = jest.spyOn(componenteInfoGame, 'showIconForNames');
+      const resultado = componenteInfoGame.showIconForNames(iconName);
+      expect(resultado).toBe(expectedClass);
+      expect(espia).toHaveBeenCalled();
+    });
+  }
+
+  testShowIconForName('pc', 'fa-brands fa-steam');
+  testShowIconForName('playstation5', 'fa-brands fa-playstation');
+  testShowIconForName('xbox-one', 'fa-brands fa-xbox');
+  testShowIconForName('jsjkshs', 'fa-solid fa-gamepad');
+
 
 
 })
