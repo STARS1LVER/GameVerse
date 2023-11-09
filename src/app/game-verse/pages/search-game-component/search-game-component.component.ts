@@ -70,9 +70,9 @@ export class SearchGameComponent {
       switch (keys) {
         // y si es required o minlength retornamos dicho string
         case 'required':
-          return 'El campo es requerido no puedes enviar el campo vacio!';
+          return 'The field is required, you cannot submit the field empty! ';
         case 'minlength':
-          return `Necesitas minimo ${errors['minlength'].requiredLength} Caracteres para buscar el juego`;
+          return `You need a minimum of ${errors['minlength'].requiredLength} characters to search for the game.`;
       }
     }
 
@@ -132,7 +132,7 @@ export class SearchGameComponent {
             // Hacemos un operador ternario para controlar el valor del nextPage, para
             // ocultar el paginator si el nextPage es nulo
             respuesta.next === null ? this.nextPage = true : this.nextPage = false;
-            
+
             this.gamesBySearch = respuesta.results;
           }
         }, 1500);

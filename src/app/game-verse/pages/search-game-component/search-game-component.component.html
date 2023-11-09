@@ -1,12 +1,12 @@
 <main>
 
-  <form [formGroup]="myInputForm" (ngSubmit)="onSubmitForm()" autocomplete="off" >
+  <form class="content-form" [formGroup]="myInputForm" (ngSubmit)="onSubmitForm()" autocomplete="off" >
     <div class="input-group-p">
       <input formControlName="name" placeholder="Find your favorite game..." type="text" id="input-field">
       <button type="submit" class="submit-button"><span> <i class="fa-solid fa-hand-pointer fa-xl"></i> </span></button>
     </div>
-    <div class="error-cont">
-      <span class="error-forms" *ngIf="errorsForm" >  {{ getFielError() }}  </span>
+    <div class="error-forms" *ngIf="errorsForm">
+      <h4 class="">  {{ getFielError() }}  </h4>
     </div>
   </form>
 

@@ -11,14 +11,31 @@ main{
   min-height: 100vh;
 }
 
+.content-form{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 .error-forms{
-  padding: 10px;
   text-align: center;
+  margin-top: 20px;
+  padding: 10px;
   background-color: rgb(14, 14, 14);
   color: rgb(255, 255, 255);
   border: 1px solid #00bf23;
   border-radius: 8px;
   font-weight: bold;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.error-forms h4 {
+  font-size: 19px;
 }
 
 .content-spinner-s{
@@ -111,6 +128,16 @@ main{
     /* border: 1px solid blue ; */
     display: flex;
     flex-direction: column;
+  }
+  .error-forms{
+    padding: 5px;
+
+    background-color: rgb(14, 14, 14);
+    color: rgb(255, 255, 255);
+    border: 1px solid #00bf23;
+    border-radius: 3px;
+    font-weight: bold;
+    font-family: 10px;
   }
 
 }
