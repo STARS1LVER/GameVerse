@@ -11,7 +11,15 @@ main{
   min-height: 100vh;
 }
 
-
+.error-forms{
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  border: 1px solid #00bf23;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
 .content-spinner-s{
   min-height: 100vh;

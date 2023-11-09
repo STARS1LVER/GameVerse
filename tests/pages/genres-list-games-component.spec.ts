@@ -55,7 +55,7 @@ describe('GenresListGamesComponent', () => {
       providers: [
         // ! Realizamos un mock para tener el control del comportamiento que queremos
         { provide: ActivatedRoute, useValue: { params: of({ id: '3' , name: 'steam'}) } },
-        { provide: GameVerveService, useValue: { getListGamesGenresForById: jest.fn() } }
+        { provide: GameVerveService, useValue: { getListGamesGenresForById: jest.fn(() => of(resultadoListGenres) ) } }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     }).compileComponents();
@@ -93,6 +93,59 @@ describe('GenresListGamesComponent', () => {
     expect( componenteGenresList.listGamesForGenres ).toEqual(resultadoListGenres)
 
   }) )
+
+  // test('Validando que la pagina no se actualice si el valor es 0 ( del metdo getPageByEmitEvent )', () => {
+
+  //   componenteGenresList.currentPage = 1;
+
+  //   const espiaCurrent = jest.spyOn(componenteGenresList, 'getListGamesforGenresById');
+
+  //   componenteGenresList.getPageByEmitEvent(0);
+
+  //   expect(componenteGenresList.currentPage).toBe(0);
+
+  //   expect( espiaCurrent ).not.toHaveBeenCalled()
+
+  // })
+
+  // test('Validando que la pagina no se actualice si el valor es 0 ( del metdo getPageByEmitEvent )', () => {
+
+
+  //   const espiaCurrent = jest.spyOn(componenteGenresList, 'getListGamesforGenresById');
+
+  //   componenteGenresList.getPageByEmitEvent(1);
+
+  //   expect(componenteGenresList.currentPage).toBe(1);
+
+  //   expect( espiaCurrent ).toHaveBeenCalled()
+
+  // })
+
+  function testCurrentPage(page: number)  {
+    test(`Validamos que la page ${page} funcione correctamente a lo esperado si ses 0 u otro numero`, () => {
+
+      const espiaCurrent = jest.spyOn(componenteGenresList, 'getListGamesforGenresById');
+
+      componenteGenresList.getPageByEmitEvent(page);
+
+      expect(componenteGenresList.currentPage).toBe(page);
+
+      if(page != 0){
+        expect( espiaCurrent ).toHaveBeenCalled()
+      } else {
+        expect( espiaCurrent ).not.toHaveBeenCalled()
+      }
+
+
+    })
+
+  }
+
+  testCurrentPage(1);
+  testCurrentPage(0)
+
+  
+
 
 
 });

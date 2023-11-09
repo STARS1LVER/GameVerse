@@ -5,7 +5,9 @@
       <input formControlName="name" placeholder="Find your favorite game..." type="text" id="input-field">
       <button type="submit" class="submit-button"><span> <i class="fa-solid fa-hand-pointer fa-xl"></i> </span></button>
     </div>
-    <span *ngIf="errorsForm" >  {{ getFielError() }}  </span>
+    <div class="error-cont">
+      <span class="error-forms" *ngIf="errorsForm" >  {{ getFielError() }}  </span>
+    </div>
   </form>
 
   <div class="content-spinner-s" *ngIf="isLoading" >
