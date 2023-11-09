@@ -100,7 +100,7 @@ describe('InfoGameComponent', () => {
   // - Inicializamos las variables ya creadas
   beforeEach(() => {
       fixture = TestBed.createComponent(InfoGameComponent)
-      componenteInfoGame = fixture. componentInstance
+      componenteInfoGame = fixture.componentInstance
       fixture.detectChanges()
       service = fixture.debugElement.injector.get(GameVerveService)
   })
@@ -122,7 +122,7 @@ describe('InfoGameComponent', () => {
 
     componenteInfoGame.ngOnInit();
 
-    tick(2500) // - le indicamos que simule
+    tick(2500) // - le indicamos que simule la espera
 
     expect(componenteInfoGame.game).toEqual( gameInfo )
 

@@ -17,6 +17,7 @@ export class GenresListGamesComponent implements OnInit {
   public id!: number;
   public currentPage: number = 1;
 
+  // Inyectamos las dependencias
   constructor(
     private gameVerseService: GameVerveService,
     private activatedRoute: ActivatedRoute,
@@ -24,7 +25,7 @@ export class GenresListGamesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    // Obtenemos los parametros de la ruta en este caso el id y el name
     this.activatedRoute.params.pipe(
       tap(({ name }) => (this.nameGenres = name)),
       tap(({ id }) => (this.id = id))
