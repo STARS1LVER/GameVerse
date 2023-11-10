@@ -45,8 +45,6 @@ export class SearchGameComponent {
       this.notSearch = false;
       return;
     }
-
-
     console.log(this.myInputForm.controls['name'].value);
 
     // inicializamos la pagina en uno  para que cada busqueda inicialice en uno
