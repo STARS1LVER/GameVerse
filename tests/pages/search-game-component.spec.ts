@@ -139,4 +139,27 @@ describe('SearchGameComponent', () => {
 
 
 
+
+  function MethodPageOnsubmit( page: number ){
+    test('Ahora probaremos el metodo getPageByEvent(page: number)', () => {
+
+      const espiaMetodo = jest.spyOn(componentSearch, 'getGamesBySearch');
+
+      componentSearch.getPageByEvent(page);
+
+      if( page != 0 ){
+        expect( espiaMetodo ).toHaveBeenCalled();
+        expect( componentSearch.currentPage ).toBe(page);
+      } else {
+        expect( espiaMetodo ).not.toHaveBeenCalled();
+        expect( componentSearch.currentPage ).toBe(0);
+      }
+    })
+  }
+
+  MethodPageOnsubmit(0);
+  MethodPageOnsubmit(1);
+
+
+
 })
