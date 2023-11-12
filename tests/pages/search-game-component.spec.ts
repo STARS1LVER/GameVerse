@@ -160,6 +160,9 @@ describe('SearchGameComponent', () => {
   MethodPageOnsubmit(0);
   MethodPageOnsubmit(1);
 
+  test('Agregando un nuevo test', () => {
+
+  })
 
 
 })
