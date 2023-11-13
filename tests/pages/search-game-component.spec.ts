@@ -1,11 +1,11 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed, fakeAsync, tick } from "@angular/core/testing";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SearchGameComponent } from "src/app/game-verse/pages/search-game-component/search-game-component.component"
 import { GameVerveService } from "src/app/game-verse/services/game-serve.service";
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from "rxjs";
-import { Result } from "src/app/game-verse/interfaces/list-games.interface";
+import { GameVerse, Result } from "src/app/game-verse/interfaces/list-games.interface";
 
 let listGamesSearch: Result[] = [
   {
@@ -40,6 +40,20 @@ let listGamesSearch: Result[] = [
 
 ]
 
+let resultGameVerse: GameVerse = {
+  count:                0,
+  next:                 '',
+  previous:             null,
+  results:              listGamesSearch,
+  seo_title:            '',
+  seo_description:      '',
+  seo_keywords:         '',
+  seo_h1:               '',
+  noindex:              true,
+  nofollow:             true,
+  description:          '',
+  nofollow_collections: []
+}
 
 
 
@@ -55,7 +69,7 @@ describe('SearchGameComponent', () => {
     TestBed.configureTestingModule({
       imports:[ FormsModule, ReactiveFormsModule, HttpClientTestingModule ],
       declarations: [ SearchGameComponent ],
-      providers: [ {provide: GameVerveService, useValue: {getListGamesBySearch: jest.fn(() =>  of( listGamesSearch ) ) } } ],
+      providers: [ {provide: GameVerveService, useValue: {getListGamesBySearch: jest.fn(() =>  of( resultGameVerse ) ) } } ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     }).compileComponents()
   })
@@ -174,9 +188,17 @@ describe('SearchGameComponent', () => {
   })
 
 
-  test('Testearemos el metodo getGamesBySearch(campo: string, page: number)  donde nos encargaremos que llegue los datos que esperamos', () => {
+  test('Testearemos el metodo getGamesBySearch(campo: string, page: number)  donde nos encargaremos que llegue los datos que esperamos', fakeAsync(() => {
+    let espiaMetodoService = jest.spyOn(service, 'getListGamesBySearch').mockReturnValueOnce( of(resultGameVerse) )
 
-  })
+    componentSearch.getGamesBySearch('gta',1);
+
+    tick(1500);
+
+    expect(componentSearch.gamesBySearch).toEqual( resultGameVerse.results );
+
+
+  }))
 
 
 })
