@@ -19,7 +19,7 @@ showing available games for each platform. Additionally, users can obtain detail
 ## Key Features
 
 - Game Exploration: Access a complete list of video games.
-![Logo](https://i.postimg.cc/T3s1Bb1v/listajuegos.jpg)
+- ![Logo](https://i.postimg.cc/T3s1Bb1v/listajuegos.jpg)
 - Advanced Search: Easily find specific games.
 ![Logo](https://i.postimg.cc/9fcg5Dn1/busqueda.jpg)
 - Latest Releases: Stay updated with the latest game releases.
