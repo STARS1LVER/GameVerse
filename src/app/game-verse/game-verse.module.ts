@@ -9,7 +9,6 @@ import { GenresListGamesComponent} from './pages/genres-list-games-component/gen
 import { GenresPageComponent } from './pages/genres-page-component/genres-page-component.component';
 import { InfoGameComponent } from './pages/info-game-component/info-game-component.component';
 import { ListGamePageComponent } from './pages/list-game-page-component/list-game-page-component.component';
-import { NextGamesPageComponent } from './pages/next-games-page-component/next-games-page-component.component';
 import { PlatformListGamesComponent } from './pages/platform-list-games-component/platform-list-games-component.component';
 import { PlatformPageComponent } from './pages/platform-page-component/platform-page-component.component';
 import { SearchGameComponent } from './pages/search-game-component/search-game-component.component';
@@ -42,7 +41,6 @@ import { GameNotFoundComponent } from './components/game-not-found/game-not-foun
     InfoGameComponent,
     LayoutPageComponent,
     ListGamePageComponent,
-    NextGamesPageComponent,
     PlatformListGamesComponent,
     PlatformPageComponent,
     SearchGameComponent,

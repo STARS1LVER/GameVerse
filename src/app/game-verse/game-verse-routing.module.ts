@@ -4,7 +4,6 @@ import { LayoutPageComponent } from './layout/layout-page-component/layout-page-
 import { WelcomePageComponent } from './pages/welcome-page-component/welcome-page-component.component';
 import { ListGamePageComponent} from './pages/list-game-page-component/list-game-page-component.component';
 import { SearchGameComponent } from './pages/search-game-component/search-game-component.component';
-import { NextGamesPageComponent } from './pages/next-games-page-component/next-games-page-component.component';
 import { TopGamesComponent } from './pages/top-games-component/top-games-component.component';
 import { InfoGameComponent } from './pages/info-game-component/info-game-component.component';
 import { GenresPageComponent } from './pages/genres-page-component/genres-page-component.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
       { path: 'welcome-page',      component: WelcomePageComponent                 },
       { path: 'list-games',        component: ListGamePageComponent                },
       { path: 'search-games',      component: SearchGameComponent                  },
-      { path: 'next-games',        component: NextGamesPageComponent               },
       { path: 'top-games',         component: TopGamesComponent                    },
       { path: 'genres-games',      component: GenresPageComponent                  },
       { path: 'platform-games',    component: PlatformPageComponent                },

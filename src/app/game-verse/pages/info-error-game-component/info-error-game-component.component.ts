@@ -13,15 +13,21 @@ export class InfoErrorGameComponentComponent implements OnInit {
 
 
   constructor( private router:Router ){}
+
   ngOnInit(): void {
+    this.timeForWelcome()
+  }
+
+
+  public timeForWelcome(){
     const intervalodID = setInterval(() => {
-      this.seconds--
+      this.seconds --;
 
       if( this.seconds  === 0){
         this.router.navigate(['/gameverse/welcome-page'])
+        clearInterval(intervalodID);
       }
     },1000)
   }
-
 
 }
