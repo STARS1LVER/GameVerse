@@ -89,6 +89,9 @@ describe('SearchGameComponent', () => {
 
 
 
+
+
+
   // -----------------------------------------------
 
   // test('Probamos el metodo onSubmitForm()', () => {
@@ -160,7 +163,18 @@ describe('SearchGameComponent', () => {
   MethodPageOnsubmit(0);
   MethodPageOnsubmit(1);
 
-  test('Agregando un nuevo test', () => {
+  test('Testiaremos el getFieldError() ', () => {
+
+      componentSearch.myInputForm.controls['name'].setErrors({ minlength: { requiredLength: 5, actualLength: 3 } });
+
+     const resultado =  componentSearch.getFielError();
+
+    expect( resultado ).toEqual('You need a minimum of 5 characters to search for the game.')
+
+  })
+
+
+  test('Testearemos el metodo getGamesBySearch(campo: string, page: number)  donde nos encargaremos que llegue los datos que esperamos', () => {
 
   })
 
